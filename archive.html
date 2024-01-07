@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Submission</title>
+    <!-- CSS FILES -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/templatemo-kind-heart-charity.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 800'%3E%3Cg fill-opacity='0.73'%3E%3Ccircle fill='%23818C6C' cx='400' cy='400' r='600'/%3E%3Ccircle fill='%239eaa79' cx='400' cy='400' r='500'/%3E%3Ccircle fill='%23bcc38c' cx='400' cy='400' r='400'/%3E%3Ccircle fill='%23d7d8a2' cx='400' cy='400' r='300'/%3E%3Ccircle fill='%23e9e6bc' cx='400' cy='400' r='200'/%3E%3Ccircle fill='%23F6F1DB' cx='400' cy='400' r='100'/%3E%3C/g%3E%3C/svg%3E");
+            background-attachment: fixed;
+            background-size: cover; */
+            overflow-x: hidden;
+        }
+
+        .archive-links li a {
+            color: black;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .c {
+            position: relative;
+        }
+
+        .text-c {
+            display: grid;
+            place-items: center;
+            position: relative;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        h1 {
+            position: relative;
+            font-size: 72px;
+            color: white;
+            line-height: 0;
+        }
+
+        .drop {
+            position: absolute;
+            height: 200px;
+            width: 200px;
+            background: #54ABFB;
+            border-radius: 51% 49% 48% 52% / 62% 44% 56% 38%;
+            opacity: 0.8;
+            border: 2px solid #3d93ff;
+        }
+
+        .drop::before {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background: #318CFE;
+            border-radius: 51% 49% 48% 52% / 62% 44% 56% 38%;
+            box-shadow: -20px 30px 16px #1B6CFB, -40px 60px 32px #1b6cfb, inset -6px 6px 10px #1B6CFB, inset 2px 6px 10px #1a74e5, inset 20px -20px 22px white, inset 40px -40px 44px #a8ceff;
+        }
+
+        .drop::after {
+            content: "";
+            position: absolute;
+            height: 40px;
+            width: 40px;
+            background: #E6FDFB;
+            border-radius: 44% 56% 46% 54% / 36% 50% 50% 64%;
+            left: 130px;
+            top: 40px;
+            box-shadow: 16px 40px 0 -10px white;
+            opacity: 0.8;
+        }
+
+        .drop1 {
+            left: -100px;
+            top: -50px;
+        }
+
+        .drop2 {
+            right: -80px;
+            bottom: 20px;
+            z-index: -1;
+            border-radius: 46% 50% 39% 54% / 56% 57% 50% 50%;
+        }
+
+        .drop2::before {
+            border-radius: 46% 50% 39% 54% / 56% 57% 50% 50%;
+        }
+
+        .list {
+            position: relative;
+        }
+
+        .list ul {
+            position: relative;
+        }
+
+        .list ul li {
+            position: relative;
+            left: 0;
+            color: #fce4ec;
+            list-style: none;
+            margin: 4px 0;
+            border-left: 2px solid #f50057;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+
+        .list ul li:hover {
+            left: 10px;
+        }
+
+        .list ul li span {
+            position: relative;
+            padding: 8px;
+            padding-left: 12px;
+            display: inline-block;
+            z-index: 1;
+            transition: 0.5s;
+        }
+
+        .list ul li:hover span {
+            color: #111;
+        }
+
+        .list ul li:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #c8d9eb;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: 0.5s;
+        }
+
+        .list ul li:hover:before {
+            transform: scaleX(1);
+        }
+
+        h1 {
+            position: relative;
+            padding: 0;
+            margin: 0;
+            font-family: "Raleway", sans-serif;
+            font-weight: 300;
+            font-size: 40px;
+            color: #080808;
+            -webkit-transition: all 0.4s ease 0s;
+            -o-transition: all 0.4s ease 0s;
+            transition: all 0.4s ease 0s;
+        }
+
+        .archive{
+            margin-top: 2rem;
+            width: 60%;
+            
+        }
+
+        .archive-heading-container{
+            display: flex;
+            justify-content: center;
+        }
+
+        .archive h1 {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 300;
+            color: #222;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+
+            display: grid;
+            grid-template-columns: 1fr max-content 1fr;
+            grid-template-rows: 27px 0;
+            grid-gap: 20px;
+            align-items: center;
+        }
+
+        .archive h1:after,
+        .archive h1:before {
+            content: " ";
+            display: block;
+            border-bottom: 2px solid #c8d9eb;
+            border-top: 2px solid #c8d9eb;
+            height: 5px;
+            background-color: #f8f8f8;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-8 col-12 d-flex flex-wrap">
+                    <p class="d-flex me-4 mb-0">
+                        <i class="bi-geo-alt me-2"></i>
+                        Akershusstranda 20, 0150 Oslo, Norway
+                    </p>
+
+                    <p class="d-flex mb-0">
+                        <i class="bi-envelope me-2"></i>
+
+                        <a href="mailto:info@company.com">
+                            info@company.com
+                        </a>
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-12 ms-auto d-lg-block d-none">
+                    <ul class="social-icon">
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-twitter"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-facebook"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-instagram"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-youtube"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-whatsapp"></a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg bg-light shadow-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" class="logo img-fluid" alt="Kind Heart Charity">
+                <span>
+                    Kind Heart Charity
+                    <small>Non-profit Organization</small>
+                </span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="#top">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="#section_2">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="#section_3">Causes</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="#section_4">Volunteer</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link click-scroll dropdown-toggle" href="#section_5"
+                            id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">News</a>
+
+                        <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+                            <li><a class="dropdown-item" href="news.html">News Listing</a></li>
+
+                            <li><a class="dropdown-item" href="news-detail.html">News Detail</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="#section_6">Contact</a>
+                    </li>
+
+                    <li class="nav-item ms-3">
+                        <a class="nav-link custom-btn custom-border-btn btn" href="donate.html">Donate</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+   <div class="container archive-heading-container">
+    <div class="archive">
+        <h1>Archive's</h1>
+    </div>
+   </div>
+
+    <div class="c">
+        <div class="drop drop1"></div>
+        <div class="drop drop2"></div>
+        <div class="container d-flex align-items-center justify-content-start mt-5 list">
+            <ul class="archive-links">
+                <li><span><a href="#">Vol. I, Issue I (July-September, 2020)</a></span></li>
+                <li><span><a href="#">Vol. I, Issue II (October-December, 2020)</a></span></li>
+                <li><span><a href="#">Vol. II, Issue I (January-March, 2021)</a></span></li>
+                <li><span><a href="#">Vol. II, Issue II (April-June, 2021)</a></span></li>
+                <li><span><a href="#">Vol. II, Issue III (July-September, 2021)</a></span></li>
+                <li><span><a href="#">Vol. II, Issue IV (October-December, 2021)</a></span></li>
+                <li><span><a href="#">Vol. III, Issue I (January-March, 2022)</a></span></li>
+                <li><span><a href="#">Vol. III, Issue II (April-June, 2022)</a></span></li>
+                <li><span><a href="#">Vol. III, Issue III (July-September, 2022)</a></span></li>
+                <li><span><a href="#">Vol. III, Issue IV (October-December, 2022)</a></span></li>
+                <li><span><a href="#">Vol. IV, Issue I (January-March, 2023)</a></span></li>
+                <li><span><a href="#">Vol. IV, Issue II (April-June, 2023)</a></span></li>
+                <li><span><a href="#">Vol. IV, Issue III (July-September, 2023)</a></span></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/click-scroll.js"></script>
+    <script src="js/counter.js"></script>
+    <script src="js/custom.js"></script>
+
+
+</body>
+
+</html>
