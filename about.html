@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>About Us</title>
+
+    <!-- CSS FILES -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="css/template.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #d6d4cd;
+        }
+
+        .c {
+            position: relative;
+        }
+
+        .drop {
+            position: absolute;
+            height: 200px;
+            width: 200px;
+            background: #54ABFB;
+            border-radius: 51% 49% 48% 52% / 62% 44% 56% 38%;
+            opacity: 0.8;
+            border: 2px solid #3d93ff;
+        }
+
+        .drop::before {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background: #318CFE;
+            border-radius: 51% 49% 48% 52% / 62% 44% 56% 38%;
+            box-shadow: -20px 30px 16px #1B6CFB, -40px 60px 32px #1b6cfb, inset -6px 6px 10px #1B6CFB, inset 2px 6px 10px #1a74e5, inset 20px -20px 22px white, inset 40px -40px 44px #a8ceff;
+        }
+
+        .drop::after {
+            content: "";
+            position: absolute;
+            height: 40px;
+            width: 40px;
+            background: #E6FDFB;
+            border-radius: 44% 56% 46% 54% / 36% 50% 50% 64%;
+            left: 130px;
+            top: 40px;
+            box-shadow: 16px 40px 0 -10px white;
+            opacity: 0.8;
+        }
+
+        .drop1 {
+            left: -60px;
+            top: -50px;
+        }
+
+        .drop2 {
+            right: -80px;
+            bottom: 20px;
+            z-index: -1;
+            border-radius: 46% 50% 39% 54% / 56% 57% 50% 50%;
+        }
+
+        .drop2::before {
+            border-radius: 46% 50% 39% 54% / 56% 57% 50% 50%;
+        }
+
+
+
+        #about-us-section {
+            background-color: aliceblue;
+            width: 100%;
+            text-align: center;
+            padding: 50px 0;
+            color: white;
+        }
+
+        .publisher {
+            background-color: transparent;
+            width: 100vw;
+            /* text-align: center; */
+            padding: 50px 0;
+            color: white;
+        }
+
+        #about-us-section h1 {
+            position: relative;
+            display: inline-block;
+        }
+
+        #about-us-section h1:after {
+            content: '';
+            display: block;
+            height: 5px;
+            background-color: black;
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80%;
+        }
+
+
+        #main-container {
+            padding: 20px;
+        }
+
+        #left-column {
+            padding-right: 20px;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        #who-we-are-heading,
+        #publisher-heading {
+            width: 100%;
+            border-bottom: 2px solid black;
+            display: inline-block;
+            line-height: 1.5;
+            color: #000;
+        }
+
+        #image-container {
+            max-width: 90%;
+            height: 70%;
+        }
+
+        #img-container img {
+            width: 100%;
+            height: 100%;
+        }
+
+        @media only screen and (max-width: 768px) {
+            #image-container {
+                margin-top: -3rem;
+            }
+
+            .drop {
+                display: none;
+            }
+            #left-column{
+                margin-left: -15%;
+                text-align: justify;
+                padding: 0;
+            }
+            .about-main{
+                padding: 0;
+            }
+
+            #image-container img{
+                width: 100%;
+                margin-left: -15%;
+            }
+            .important-info{
+                font-size: 1.5rem;
+
+            }
+            .publish{
+                margin-top: 1rem !important;
+            }
+            #publisher-heading{
+                font-size: 1.3rem;
+            }
+            p{
+                padding: 5px;
+                text-align: justify;
+            }
+            .card-body{
+                padding: 10px 0 !important;
+            }
+            .card{
+                padding: 10px 0 !important;
+            }
+            .card-description{
+                text-align: center;
+            }
+            .card-subtitle{
+                text-align: center;
+            }
+            #feather{
+                display: none;
+            }
+            #right-column{
+                display: none;
+            }
+        }
+
+
+        /* .card {
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+            border: 1px solid black;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-left: auto;
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 1rem;
+        } */
+
+        .publish {
+            width: 80%;
+        }
+
+        .card img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            color: #343a40;
+        }
+
+        .card-text lead {
+            color: #6c757d;
+        }
+
+        .contact-info p {
+            margin-bottom: 5px;
+        }
+
+        .contact-info a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .launching-date {
+            font-size: 18px;
+            font-weight: bold;
+            color: #28a745;
+        }
+
+
+        .card {
+            width: 100%;
+            max-width: 100%;
+            margin: auto;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            background-color: aliceblue;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            color: #343a40;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .card-subtitle {
+            color: #6c757d;
+        }
+
+        .card-text  {
+            color: #495057;
+            margin-bottom: 10px;
+            
+        }
+
+        p {
+            color: black;
+        }
+        .about-main, .glass-effect {
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 1rem;
+            padding: 1.5rem;
+        }
+       
+    </style>
+
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-8 col-12 d-flex flex-wrap">
+                    <p class="d-flex me-4 mb-0">
+                        <i class="bi-geo-alt me-2"></i>
+                        Akershusstranda 20, 0150 Oslo, Norway
+                    </p>
+
+                    <p class="d-flex mb-0">
+                        <i class="bi-envelope me-2"></i>
+
+                        <a href="mailto:info@company.com">
+                            info@company.com
+                        </a>
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-12 ms-auto d-lg-block d-none">
+                    <ul class="social-icon">
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-twitter"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-facebook"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-instagram"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-youtube"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-whatsapp"></a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg bg-light shadow-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" class="logo img-fluid" alt="Kind Heart Charity">
+                <span>
+                    Kind Heart Charity
+                    <small>Non-profit Organization</small>
+                </span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="#top">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="#section_2">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="#section_3">Causes</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="#section_4">Volunteer</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link click-scroll dropdown-toggle" href="#section_5"
+                            id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">News</a>
+
+                        <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+                            <li><a class="dropdown-item" href="news.html">News Listing</a></li>
+
+                            <li><a class="dropdown-item" href="news-detail.html">News Detail</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="#section_6">Contact</a>
+                    </li>
+
+                    <li class="nav-item ms-3">
+                        <a class="nav-link custom-btn custom-border-btn btn" href="donate.html">Donate</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+    <div class="container">
+        <div class="container card  mt-5 publisher  c rounded-3 about-main">
+            <div class="container mt-1 c about-us-section">
+                <!-- <div class="drop drop1"></div> -->
+                <div class="drop drop2"></div>
+                <h1 class="text-center text-black">About Us</h1>
+            </div>
+
+            <div class="container ">
+                <div class="row mt-4 gap-5 ms-5">
+                    <div class="col-md-7 " id="left-column">
+                        <h2 id="who-we-are-heading">Who we are</h2>
+                        <div>
+                            <p class="lead"><strong>'Soul Connection'</strong>, the quarterly, multilingual
+                                e-magazine promoting
+                                Northeast India’s indigenous poetry, arts, and literature is published by the Guwahati
+                                Grand
+                                Poetry Festival, Northeast India's first and only of its kind poetry, arts, and
+                                literature
+                                forum
+                                based at Guwahati, Assam, India. The e-magazine was launched on <u>19 September
+                                    2020</u>, at
+                                Guwahati.</p>
+
+                            <p class="lead">We strongly believe that poetry is a powerful medium that can
+                                help us
+                                break all
+                                barriers, and <strong>'Soul Connection'</strong> intends to do exactly that, making it a
+                                collectible of sorts with poems from different generations of poets to inspire and
+                                emulate.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mt-5" id="right-column">
+                        <div id="image-container">
+                            <img src="./images/about-us-right.jpg" alt="Sample Image" id="feather">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <div class="container mt-1 card glass-effect">
+            <div class="container mt-1 c about-us-section">
+                <div class="drop drop1"></div>
+                <div class="drop drop2"></div>
+                <h1 class="text-center text-black mt-2 important-info">Important information about the publication</h1>
+            </div>
+            <div class="card mt-5 text-center publish ">
+
+                <h2 class=" text-black mb-4" id="publisher-heading">Publisher and Copyright Owner</h2>
+                <div class="row no-gutters border-bottom">
+                    <div class="col-md-6 h-100 text-center d-flex align-items-center flex-column mb-3">
+                        <img src="./images/editor-img.png" alt="Person Image" class="rounded-circle">
+                        <h5 class="card-title text-center">Manjit Kr. Sarma</h5>
+                        <p class="card-text lead text-center"><b>Managing Trustee, <br> Guwahati Grand Poetry
+                                Festival</b>
+                        </p>
+                        <div class="contact-info">
+                            <p class="card-text lead text-center"> <i class="bi bi-telephone-fill"></i> +91 7896454751</p>
+                            <p class="card-text lead text-center"><i class="bi bi-envelope-fill"></i> <a
+                                    href="mailto:editor@soulconnectionne.in">editor@soulconnectionne.in</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">Address</h5>
+                            <p class="card-text lead">House No. 09</p>
+                            <p class="card-text lead">Dr. Bhupen Hazarika Road</p>
+                            <p class="card-text lead">Kharghuli, Guwahati</p>
+                            <p class="card-text lead">Assam – 781004</p>
+
+
+                            <h5 class="card-title mt-3">Launching Date</h5>
+                            <p class="card-text lead launching-date">September 19, 2020</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container mt-2">
+
+                <!-- Frequency / Mode of Publication Card -->
+                <div class="card c glass-effect">
+                    <div class="drop drop2"></div>
+                    <div class="card-body">
+                        <h2 class="card-title">Frequency / Mode of Publication:</h2>
+                        <p class="card-text lead">Quarterly / Online</p>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title">Language:</h2>
+                        <p class="card-text lead">Multiple (English, Hindi, Assamese, Bengali etc.).</p>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title">Scope:</h2>
+                        <p class="card-text lead"><strong>'Soul Connection'</strong> seeks to enrich the indigenous
+                            poetry,
+                            arts, and literature of Northeast India by publishing these on a selective basis on an
+                            online
+                            format and disseminate the same among readers across the World.</p>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title">Mandate:</h2>
+                        <p class="card-text lead">Extending a much-needed platform to poets, artistes, and writers and
+                            promoting young talents of Northeast India by providing them maximum scope to express their
+                            creativity without bias.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container mt-1 card text-center">
+            <div class="container mt-1 c about-us-section">
+                <h1 class="text-center text-black mt-2">Honorary Advisors</h1>
+            </div>
+            <div class="container mt-5">
+                <div class="row">
+                    <!-- Person 1 -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="./images/editor-img.png" alt="Person 1"
+                                class="card-img rounded-top mx-auto rounded-circle">
+                            <div class="card-body">
+                                <h2 class="card-title">Prof. Pradip Acharya </h2>
+                                <p class="card-description">Honorary Advisor of Soul Connection</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Person 2 -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="./images/editor-img.png" alt="Person 2"
+                                class="card-img rounded-top mx-auto rounded-circle">
+                            <div class="card-body">
+                                <h2 class="card-title">Anis Uz Zaman </h2>
+                                <p class="card-description">Honorary Advisor of Soul Connection</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Person 3 -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="./images/editor-img.png" alt="Person 3"
+                                class="card-img rounded-top mx-auto rounded-circle">
+                            <div class="card-body">
+                                <h2 class="card-title">Kailash Ch. Sikhwal </h2>
+                                <p class="card-description">Honorary Advisor of Soul Connection</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-1 card text-center c ">
+            
+            <div class="container mt-1 c about-us-section">
+                <h1 class="text-center text-black mt-2">Editor</h1>
+            </div>
+            <div class="card mt-4 glass-effect">
+                <div class="row no-gutters">
+                    <!-- Left Column -->
+                    <div class="col-md-6">
+                        <img src="./images/editor-img.png" alt="Person Image" class=" img-fluid">
+                        <div class="card-body mt-3">
+                            <h2 class="card-title"> Manjit Kr. Sarma</h2>
+                            <p class="card-subtitle">Journalist, Author and Researcher</p>
+                        </div>
+                        <div class=" text-center">
+                            <h5>Contact Information:</h5>
+                            <p class="card-text lead"> <i class="bi bi-telephone-fill"></i> +91 7896454751</p>
+                            <p class="card-text lead"><i class="bi bi-envelope-fill"></i> <a
+                                    href="mailto:editor@soulconnectionne.in">editor@soulconnectionne.in</a></p>
+                        </div>
+                        <div class="drop drop-1" style="margin-left: -15%;"></div>
+                    </div>
+                    <!-- Right Column -->
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <p class="lead text-justify border-bottom">
+                                <b> Manjit Kr. Sarma</b> is a journalist, author, and researcher. He wrote for different
+                                newspapers published from Assam and also worked as the Editor of a daily English
+                                Newspaper published from Guwahati in 2017. He is the Founder Trustee and Director of
+                                Guwahati Grand Poetry Festival, NE India’s first and the only of its kind poetry,
+                                literature and arts forum. He is the founder editor of Soul Connection.
+                            </p>
+
+                            <div class="row mt-4">
+                                <div class="col-md-6 address text-left">
+                                    <h5>Address:</h5>
+                                    <p class="card-text lead">House No. 09</p>
+                                    <p class="card-text lead">Dr. Bhupen Hazarika Road</p>
+                                    <p class="card-text lead">Kharghuli, Guwahati</p>
+                                    <p class="card-text lead">Assam – 781004</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+        <div class="container mt-1 text-center card">
+            <div class="container mt-1 c about-us-section">
+                <h1 class="text-black mt-2">Editorial Board</h1>
+            </div>
+            <div class="container mt-5">
+                <div class="row">
+                    <!-- Person 1 -->
+                    <div class="col-md-3">
+                        <div class="card h-100">
+                            <img src="./images/editor-img.png" alt="Person 1" class="card-img rounded-top mx-auto rounded-circle">
+                            <div class="card-body d-flex flex-column">
+                                <p class="fw-bolder flex-grow-1 card-description">
+                                    Rajeeb Kumar Phukan 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Person 2 -->
+                    <div class="col-md-3">
+                        <div class="card h-100">
+                            <img src="./images/editor-img.png" alt="Person 2" class="card-img rounded-top mx-auto rounded-circle">
+                            <div class="card-body d-flex flex-column">
+                                <p class="fw-bolder flex-grow-1 card-description">Samsul Huda Patgiri</p>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Person 3 -->
+                    <div class="col-md-3">
+                        <div class="card h-100">
+                            <img src="./images/editor-img.png" alt="Person 3" class="card-img rounded-top mx-auto rounded-circle">
+                            <div class="card-body d-flex flex-column">
+                                <p class="fw-bolder flex-grow-1 card-description">Suman Sarma</p>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Person 4 -->
+                    <div class="col-md-3">
+                        <div class="card h-100">
+                            <img src="./images/editor-img.png" alt="Person 4" class="card-img rounded-top mx-auto rounded-circle">
+                            <div class="card-body d-flex flex-column">
+                                <p class="fw-bolder flex-grow-1 card-description">Jahnavi Borthakur Saxena</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+    
+    </div>
+
+
+
+
+
+
+    <!-- JAVASCRIPT FILES -->
+
+    <script src="js/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/click-scroll.js"></script>
+    <script src="js/counter.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+
+</html>
