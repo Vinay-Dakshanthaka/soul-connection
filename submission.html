@@ -49,21 +49,21 @@
         }
         
         @media (max-width: 767px) {
-            .mt-3 {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-            }
+           .btns{
+            /* display: block;   */
+            margin-left: 5rem;
+           }
+            
         }
         p{
             text-wrap: balance;
-            text-align: justify;
+            /* text-align: justify; */
         }
         .bullets{
             font-size: 1.25rem;
             font-weight: 300;
             color: black;
+            /* text-align: justify; */
         }
         
     </style>
@@ -198,10 +198,10 @@ https://templatemo.com/tm-581-kind-heart-charity
         <div class="row">
             <!-- Aside Container -->
             <aside class="col-md-3 mb-4">
-                <div class="mt-1">
-                    <button class="btn btn-primary" onclick="toggleContainer('submission','Submission Guidelines')">Submission
+                <div>
+                    <button class="btn btns btn-primary" onclick="toggleContainer('submission','Submission Guidelines')">Submission
                         Guidelines</button>
-                    <button class="btn btn-primary" onclick="toggleContainer('publication','Publication Guidelines')">Publication
+                    <button class="btn btns btn-primary" onclick="toggleContainer('publication','Publication Guidelines')">Publication
                         Guidelines</button>
                 </div>
             </aside>

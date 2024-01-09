@@ -17,7 +17,80 @@
 
     <link href="css/template.css" rel="stylesheet">
     <style>
-        
+        body {
+            background-color: aliceblue;
+        }
+
+        .c {
+            position: relative;
+        }
+
+        .drop {
+            position: absolute;
+            height: 200px;
+            width: 200px;
+            background: #54ABFB;
+            border-radius: 51% 49% 48% 52% / 62% 44% 56% 38%;
+            opacity: 0.8;
+            border: 2px solid #3d93ff;
+        }
+
+        .drop::before {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background: #318CFE;
+            border-radius: 51% 49% 48% 52% / 62% 44% 56% 38%;
+            box-shadow: -20px 30px 16px #1B6CFB, -40px 60px 32px #1b6cfb, inset -6px 6px 10px #1B6CFB, inset 2px 6px 10px #1a74e5, inset 20px -20px 22px white, inset 40px -40px 44px #a8ceff;
+        }
+
+        .drop::after {
+            content: "";
+            position: absolute;
+            height: 40px;
+            width: 40px;
+            background: #E6FDFB;
+            border-radius: 44% 56% 46% 54% / 36% 50% 50% 64%;
+            left: 130px;
+            top: 40px;
+            box-shadow: 16px 40px 0 -10px white;
+            opacity: 0.8;
+        }
+
+        .drop1 {
+            left: -100px;
+            top: -100px;
+        }
+
+        .drop2 {
+            right: 0;
+            bottom: 20px;
+            z-index: -1;
+            border-radius: 46% 50% 39% 54% / 56% 57% 50% 50%;
+        }
+
+        .drop2::before {
+            border-radius: 46% 50% 39% 54% / 56% 57% 50% 50%;
+        }
+
+        .admin-profile-title {
+            background-color: transparent;
+            font-weight: bold;
+            border: none;
+        }
+
+        .modal {
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        @media (max-width: 767px) {
+            .drop {
+                display: none;
+            }
+        }
         
     </style>
 
@@ -93,7 +166,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Home</a>
+                        <a class="nav-link " href="index.html">Home</a>
                     </li>
 
                     <li class="nav-item">
@@ -112,19 +185,19 @@
                         <a class="nav-link" href="submission.html">Submission</a>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="./adminDashboard.html">Dashboard</a>
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link click-scroll dropdown-toggle active" href="#section_5"
+                            id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Admin panel</a>
+
+                        <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+                            <li><a class="dropdown-item" href="./user.html">Profile</a></li>
+                            <li><a class="dropdown-item mb-2" href="./adminDashboard.html">Admin Dashboard</a></li>
+                            <li><a class="dropdown-item" href="./transaction_details.html">Transaction Details</a></li>
+                        </ul>
                     </li>
-
-                    <!-- <li class="nav-item dropdown">
-                            <a class="nav-link click-scroll dropdown-toggle" href="#section_5" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">News</a>
-
-                            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
-                                <li><a class="dropdown-item" href=""></a></li>
-
-                                <li><a class="dropdown-item" href=""></a></li>
-                            </ul>
-                        </li> -->
 
                     <li class="nav-item">
                         <a class="nav-link " href="contact.html">Contact</a>
@@ -138,8 +211,127 @@
         </div>
     </nav>
 
+    <div class="drop drop-1"></div>
+    <div class="container mt-5">
+        <h2 class="mb-2 text-center admin-profile-title card">Admin Profile</h2>
 
-    
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-4 card d-flex flex-column align-items-center justify-content-center border-0 bg-transparent"
+                style="width: 60%;">
+
+                <div class="text-center mb-2">
+                    <div class="rounded  profile-picture-container " style="width: 200px; height: 200px;">
+                        <img src="./images/editor-img.png" alt="Profile Picture" class="img-fluid rounded-circle"
+                            style="width: 100%; height: 100%;">
+                    </div>
+                </div>
+                <p class="text-black">Profile Picture</p>
+                <label for="fileInput" class="custom-btn btn-primary btn-sm">
+                    Select Image
+                </label>
+                <input type="file" id="fileInput" class="d-none" accept="image/*">
+
+                <p id="selectedFileName" class="mt-2"></p>
+            </div>
+
+            <div class="col-12 col-md-8 mb-5 card bg-transparent border-0">
+                <h4 class="mt-3 border-bottom">Account Details</h4>
+
+                <form class="p-3 form">
+                    <div class="form-group mb-2">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                    </div>
+
+                    <div class="form-group mb-2">
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number">
+                    </div>
+
+                    <div class="form-group mb-2">
+                        <label for="email">Email Address:</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email address">
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <button type="button" class="custom-btn btn-block mt-3">Save Changes</button>
+                        <button type="button" class="custom-border-btn rounded   btn-block mt-3" data-toggle="modal"
+                            data-target="#changePasswordModal">Change Password</button>
+                    </div>
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- Change Password Modal -->
+    <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog"
+        aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="changePasswordModalLabel">Change Password</h5>
+                    <button type="button" class="close border-0 " data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body ">
+                    <form>
+                        <div class="form-group">
+                            <label for="currentPassword">Current Password:</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="currentPassword"
+                                    placeholder="Enter current password">
+                                <div class="input-group-append">
+                                    <span class="input-group-text toggle-password"
+                                        onclick="togglePassword('currentPassword')">
+                                        <i class="bi bi-eye"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="newPassword">New Password:</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="newPassword"
+                                    placeholder="Enter new password">
+                                <div class="input-group-append">
+                                    <span class="input-group-text toggle-password"
+                                        onclick="togglePassword('newPassword')">
+                                        <i class="bi bi-eye"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password:</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="confirmPassword"
+                                    placeholder="Confirm new password">
+                                <div class="input-group-append">
+                                    <span class="input-group-text toggle-password"
+                                        onclick="togglePassword('confirmPassword')">
+                                        <i class="bi bi-eye"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Change Password</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
     <footer class="site-footer">
         <div class="container">
             <div class="row">
@@ -153,27 +345,32 @@
                     <div class="d-flex flex-column justify-content-center">
                         <a href="https://www.guwahatigrandpoetryfestival.com/">
 
-                            <p class="mb-0" style="color:rgb(240, 240, 240)">Soul Connection Magazine is the property of Guwahati Grand Poetry Festival,
+                            <p class="mb-0" style="color:rgb(240, 240, 240)">Soul Connection Magazine is the
+                                property of
+                                Guwahati Grand Poetry Festival,
                             </p>
-                            <p class="mb-0" style="color:rgb(0, 255, 247)"><strong>An Independent, Non-Profit Organization.</strong></p>
+                            <p class="mb-0" style="color:rgb(0, 255, 247)"><strong>An Independent, Non-Profit
+                                    Organization.</strong></p>
 
                         </a>
                     </div>
                 </div>
 
                 <div class="col-lg-6 col-md-6 col-12 mx-auto">
-                    <h5 class="site-footer-title mb-3" style="color:rgb(255, 255, 255)" >Contact Infomation</h5>
+                    <h5 class="site-footer-title mb-3" style="color:rgb(255, 255, 255)">Contact Infomation</h5>
 
-                    <p class="text-white d-flex mb-2" >
+                    <p class="text-white d-flex mb-2">
                         <i class="bi-telephone me-2"></i>
                         <strong style="color:rgb(240, 240, 240)" class="me-2">Mobile: </strong>
-                        <a style="color:rgb(240, 240, 240)" href="tel:+917896454751" class="site-footer-link">+91 7896454751</a>
+                        <a style="color:rgb(240, 240, 240)" href="tel:+917896454751" class="site-footer-link">+91
+                            7896454751</a>
                     </p>
 
                     <p class="text-white d-flex">
                         <i class="bi-envelope me-2"></i>
                         <strong class="me-2" style="color:rgb(240, 240, 240)">Email: </strong>
-                        <a style="color:rgb(240, 240, 240)" href="mailto:editor@soulconnectionne.in" class="site-footer-link">
+                        <a style="color:rgb(240, 240, 240)" href="mailto:editor@soulconnectionne.in"
+                            class="site-footer-link">
                             editor@soulconnectionne.in
                         </a>
                     </p>
@@ -233,12 +430,35 @@
     </footer>
 
     <!-- JAVASCRIPT FILES -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.sticky.js"></script>
     <script src="js/click-scroll.js"></script>
     <script src="js/counter.js"></script>
     <script src="js/custom.js"></script>
+
+
+
+    <script>
+        function togglePassword(inputId) {
+            const passwordInput = document.getElementById(inputId);
+            const icon = passwordInput.nextElementSibling.querySelector('i');
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                icon.classList.remove('bi-eye');
+                icon.classList.add('bi-eye-slash');
+            } else {
+                passwordInput.type = "password";
+                icon.classList.remove('bi-eye-slash');
+                icon.classList.add('bi-eye');
+            }
+        }
+    </script>
     <!-- <script>
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
