@@ -1,161 +1,162 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <meta name="description" content="">
-        <meta name="author" content="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Admin Dashboard</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-        <!-- CSS FILES -->        
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+    <title>Admin Dashboard</title>
 
-        <link href="css/bootstrap-icons.css" rel="stylesheet">
+    <!-- CSS FILES -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-        <link href="css/template.css" rel="stylesheet">
-        <!-- Font Awesome -->
-	<script src="https://kit.fontawesome.com/356940580b.js" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-		crossorigin="anonymous">
-        <style>
-            
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
 
-
-body {
-    background: #07617C;
-}
-
-.container-1 {
-    /* min-height: 100vh; */
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 0;
-    flex-direction: column;
-    position: relative;
-    overflow-x: hidden;
-    margin-top: 5%;
-}
-
-#heading {
-    font-size: 3rem;
-    color: white;
-    font-weight: bold;
-}
-
-.card {
-    width: 40vw;
-    height: auto;
-    background: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 1rem;
-    /* padding: 1.5rem; */
-    z-index: 10;
-    color: whitesmoke;
-    margin-top: 20px;
-    /* Adjust margin-top as needed */
-    margin-left: auto;
-    margin-right: auto;
-}
+    <link href="css/template.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/356940580b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        crossorigin="anonymous">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
 
-.title {
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
-}
+        body {
+            background: #07617C;
+        }
 
-.subtitle {
-    font-size: 1rem;
-    margin-bottom: 2rem;
-}
+        .container-1 {
+            /* min-height: 100vh; */
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 0;
+            flex-direction: column;
+            position: relative;
+            overflow-x: hidden;
+            margin-top: 5%;
+        }
 
-.btn-1 {
-    background: none;
-    border: none;
-    text-align: center;
-    font-size: 1rem;
-    color: whitesmoke;
-    background-color: #fa709a;
-    padding: 0.8rem 1.8rem;
-    border-radius: 2rem;
-    cursor: pointer;
-}
+        #heading {
+            font-size: 3rem;
+            color: white;
+            font-weight: bold;
+        }
 
-.blob {
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    background: linear-gradient(180deg,
-            rgba(47, 184, 255, 0.42) 31.77%,
-            #5c9df1 100%);
-    mix-blend-mode: color-dodge;
-    -webkit-animation: move 25s infinite alternate;
-    animation: move 25s infinite alternate;
-    transition: 1s cubic-bezier(0.07, 0.8, 0.16, 1);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+        .card {
+            width: 40vw;
+            height: auto;
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 1rem;
+            /* padding: 1.5rem; */
+            z-index: 10;
+            color: whitesmoke;
+            margin-top: 20px;
+            /* Adjust margin-top as needed */
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-.blob:hover {
-    width: 520px;
-    height: 520px;
-    -webkit-filter: blur(30px);
-    filter: blur(30px);
-    box-shadow:
-        inset 0 0 0 5px rgba(255, 255, 255, 0.6),
-        inset 100px 100px 0 0px #fa709a,
-        inset 200px 200px 0 0px #784ba8,
-        inset 300px 300px 0 0px #2b86c5;
-}
 
-@-webkit-keyframes move {
-    from {
-        transform: translate(-50%, -50%) rotate(-90deg);
-        border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
-    }
+        .title {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
 
-    to {
-        transform: translate(50%, -50%) rotate(-10deg);
-        border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%;
-    }
-}
+        .subtitle {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
 
-@keyframes move {
-    from {
-        transform: translate(-50%, -50%) rotate(-90deg);
-        border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
-    }
+        .btn-1 {
+            background: none;
+            border: none;
+            text-align: center;
+            font-size: 1rem;
+            color: whitesmoke;
+            background-color: #fa709a;
+            padding: 0.8rem 1.8rem;
+            border-radius: 2rem;
+            cursor: pointer;
+        }
 
-    to {
-        transform: translate(50%, -50%) rotate(-10deg);
-        border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%;
-    }
-}
+        .blob {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: linear-gradient(180deg,
+                    rgba(47, 184, 255, 0.42) 31.77%,
+                    #5c9df1 100%);
+            mix-blend-mode: color-dodge;
+            -webkit-animation: move 25s infinite alternate;
+            animation: move 25s infinite alternate;
+            transition: 1s cubic-bezier(0.07, 0.8, 0.16, 1);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
 
-@media screen and (max-width: 768px) {
+        .blob:hover {
+            width: 520px;
+            height: 520px;
+            -webkit-filter: blur(30px);
+            filter: blur(30px);
+            box-shadow:
+                inset 0 0 0 5px rgba(255, 255, 255, 0.6),
+                inset 100px 100px 0 0px #fa709a,
+                inset 200px 200px 0 0px #784ba8,
+                inset 300px 300px 0 0px #2b86c5;
+        }
 
-    /* .card {
+        @-webkit-keyframes move {
+            from {
+                transform: translate(-50%, -50%) rotate(-90deg);
+                border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
+            }
+
+            to {
+                transform: translate(50%, -50%) rotate(-10deg);
+                border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%;
+            }
+        }
+
+        @keyframes move {
+            from {
+                transform: translate(-50%, -50%) rotate(-90deg);
+                border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
+            }
+
+            to {
+                transform: translate(50%, -50%) rotate(-10deg);
+                border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+
+            /* .card {
 width: 80%;
 margin-top: 20px;
 margin-left: 15%;
 margin-right: auto;
 } */
-    body {
-        background: #91a5ab !important;
-    }
-/* 
+            body {
+                background: #91a5ab !important;
+            }
+
+            /* 
     .container {
         width: 100%;
         display: flex;
@@ -166,99 +167,115 @@ margin-right: auto;
         overflow-x: hidden;
         margin-top: 5%;
     } */
-    
 
-    #heading {
-        font-size: 2rem;
-        color: white;
-        font-weight: bold;
-        text-align: center;
-        /* margin-left: 18%; */
-    }
 
-    .card {
-        width: 90%;
-        /* 80% of the screen width for mobile screens */
-        margin: 20px auto;
-        /* margin-left: 15%; */
-        /* Center the card */
-        background: rgba(255, 255, 255, 0.15);
-        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-        backdrop-filter: blur(18px);
-        -webkit-backdrop-filter: blur(18px);
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        border-radius: 1rem;
-        z-index: 10;
-        color: whitesmoke;
-    }
+            #heading {
+                font-size: 2rem;
+                color: white;
+                font-weight: bold;
+                text-align: center;
+                /* margin-left: 18%; */
+            }
 
-    .blob {
-        position: fixed;
-        /* Make the blob static */
-        width: 500px;
-        height: 500px;
-        background: linear-gradient(180deg,
-                rgba(47, 184, 255, 0.42) 31.77%,
-                #5c9df1 100%);
-        mix-blend-mode: color-dodge;
-        transition: 1s cubic-bezier(0.07, 0.8, 0.16, 1);
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
+            .card {
+                width: 90%;
+                /* 80% of the screen width for mobile screens */
+                margin: 20px auto;
+                /* margin-left: 15%; */
+                /* Center the card */
+                background: rgba(255, 255, 255, 0.15);
+                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                backdrop-filter: blur(18px);
+                -webkit-backdrop-filter: blur(18px);
+                border: 1px solid rgba(255, 255, 255, 0.18);
+                border-radius: 1rem;
+                z-index: 10;
+                color: whitesmoke;
+            }
 
-    .blob:hover {
-        width: 520px;
-        height: 520px;
-        -webkit-filter: blur(30px);
-        filter: blur(30px);
-        box-shadow:
-            inset 0 0 0 5px rgba(255, 255, 255, 0.6),
-            inset 100px 100px 0 0px #fa709a,
-            inset 200px 200px 0 0px #784ba8,
-            inset 300px 300px 0 0px #2b86c5;
-    }
-}
+            .blob {
+                position: fixed;
+                /* Make the blob static */
+                width: 500px;
+                height: 500px;
+                background: linear-gradient(180deg,
+                        rgba(47, 184, 255, 0.42) 31.77%,
+                        #5c9df1 100%);
+                mix-blend-mode: color-dodge;
+                transition: 1s cubic-bezier(0.07, 0.8, 0.16, 1);
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
 
-            #dataTable {
-             display: none;
-         }
-         form h2{
-            color:rgb(223, 223, 223);
+            .blob:hover {
+                width: 520px;
+                height: 520px;
+                -webkit-filter: blur(30px);
+                filter: blur(30px);
+                box-shadow:
+                    inset 0 0 0 5px rgba(255, 255, 255, 0.6),
+                    inset 100px 100px 0 0px #fa709a,
+                    inset 200px 200px 0 0px #784ba8,
+                    inset 300px 300px 0 0px #2b86c5;
+            }
+        }
+
+        #dataTable {
+            display: none;
+        }
+
+        form h2 {
+            color: rgb(223, 223, 223);
             font-size: 35px;
-         }
-     </style>
+        }
+
+        #dataTable {
+            display: none;
+        }
+
+        table{
+            margin-left: auto;
+            margin-right: auto;
+            background-color: white;
+            color: black;
+        }
+        tr,th,td{
+            color: black;
+            text-align: center;
+        }
+    </style>
 
 
 
-    </head>
-    
-    <body id="section_1">
+</head>
 
-        <header class="site-header">
-            <div class="container">
-                <div class="row">
-    
-                    <div class="row d-flex ">
-                        <div class="col-lg-6 col-sm-12 d-flex align-items-center flex-wrap">
-                            <p class="d-flex  me-4 mb-0">
-                                <i class="bi bi-globe me-2"></i>
-                                <a class="top-a" href="https://www.soulconnectionne.in" target="_blank">
-                                    <span class="fs-sm">www.soulconnectionne.in</span>
-                                </a>
-                            </p>
-                        </div>
-                        <div class="col-lg-6 col-sm-12 d-flex flex-wrap justify-content-end  align-items-center  top-a-2">
-                            <p class="d-flex mb-0">
-                                <i class="bi bi-envelope me-2"></i>
-                                <a class="top-a" href="mailto:editor@soulconnectionne.in">
-                                    <span class="fs-sm">editor@soulconnectionne.in</span>
-                                </a>
-                            </p>
-                        </div>
+<body id="section_1">
+
+    <header class="site-header">
+        <div class="container">
+            <div class="row">
+
+                <div class="row d-flex ">
+                    <div class="col-lg-6 col-sm-12 d-flex align-items-center flex-wrap">
+                        <p class="d-flex  me-4 mb-0">
+                            <i class="bi bi-globe me-2"></i>
+                            <a class="top-a" href="https://www.soulconnectionne.in" target="_blank">
+                                <span class="fs-sm">www.soulconnectionne.in</span>
+                            </a>
+                        </p>
                     </div>
-    
-                    <!-- <div class="col-lg-3 col-12 ms-auto d-lg-block d-none">
+                    <div class="col-lg-6 col-sm-12 d-flex flex-wrap justify-content-end  align-items-center  top-a-2">
+                        <p class="d-flex mb-0">
+                            <i class="bi bi-envelope me-2"></i>
+                            <a class="top-a" href="mailto:editor@soulconnectionne.in">
+                                <span class="fs-sm">editor@soulconnectionne.in</span>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- <div class="col-lg-3 col-12 ms-auto d-lg-block d-none">
                                 <ul class="social-icon">
                                     <li class="social-icon-item">
                                         <a href="#" class="social-icon-link bi-twitter"></a>
@@ -281,289 +298,298 @@ margin-right: auto;
                                     </li>
                                 </ul>
                             </div> -->
-    
-                </div>
-            </header>
-        
-            <nav class="navbar navbar-expand-lg bg-light shadow-lg">
-                <div class="container">
-                    <a class="navbar-brand" href="index.html">
-                        <!-- <img src="images/logo.png" class="logo img-fluid" alt="Kind Heart Charity"> -->
-                        <span>
-                            Soul Connection Magazine
-                            <small>Non-profit Organization</small>
-                        </span>
-                    </a>
-        
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-        
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item">
-                                <a class="nav-link " href="index.html">Home</a>
-                            </li>
-        
-                            <li class="nav-item">
-                                <a class="nav-link" href="about.html">About Us</a>
-                            </li>
-        
-                            <li class="nav-item">
-                                <a class="nav-link" href="current_issue.html">Current Issues</a>
-                            </li>
-        
-                            <li class="nav-item">
-                                <a class="nav-link" href="archive.html">Archive</a>
-                            </li>
-        
-                            <li class="nav-item">
-                                <a class="nav-link" href="submission.html">Submission</a>
-                            </li>
-        
-                            
-        
-                            <li class="nav-item dropdown">
-                                    <a class="nav-link click-scroll dropdown-toggle active" href="#section_5" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admin panel</a>
-        
-                                    <ul class="dropdown-menu dropdown-menu-light p-0" aria-labelledby="navbarLightDropdownMenuLink">
-                                        <li><a class="dropdown-item" href="./adminprofile.html">Profile</a></li>  
-                                        <li><a class="dropdown-item active" href="./adminDashboard.html">Admin Dashboard</a></li>
-                                        <li><a class="dropdown-item" href="./transaction_details.html">Transaction Details</a></li>
-                                    </ul>
-                                </li>
-        
-                            <li class="nav-item">
-                                <a class="nav-link " href="contact.html">Contact Us</a>
-                            </li>
-        
-                            <li class="nav-item ms-3">
-                                <a class="nav-link custom-btn custom-border-btn btn" href="login.html">Login</a>
-                            </li>
+
+            </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg bg-light shadow-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <!-- <img src="images/logo.png" class="logo img-fluid" alt="Kind Heart Charity"> -->
+                <span>
+                    Soul Connection Magazine
+                    <small>Non-profit Organization</small>
+                </span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="current_issue.html">Current Issues</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="archive.html">Archive</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="submission.html">Submission</a>
+                    </li>
+
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link click-scroll dropdown-toggle active" href="#section_5"
+                            id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Admin panel</a>
+
+                        <ul class="dropdown-menu dropdown-menu-light p-0" aria-labelledby="navbarLightDropdownMenuLink">
+                            <li><a class="dropdown-item" href="./adminprofile.html">Profile</a></li>
+                            <li><a class="dropdown-item active" href="./adminDashboard.html">Admin Dashboard</a></li>
+                            <li><a class="dropdown-item" href="./transaction_details.html">Transaction Details</a></li>
                         </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link " href="contact.html">Contact Us</a>
+                    </li>
+
+                    <li class="nav-item ms-3">
+                        <a class="nav-link custom-btn custom-border-btn btn" href="login.html">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+        <div class="container-1  ">
+
+            <h1 id="heading">Admin Dashboard</h1>
+            <div>
+                <div class="card mb-3">
+                    <div class="container rounded custom-container" id="container-1">
+                        <form onsubmit="(e)=>{e.preventDefault()}">
+                            <h2 class="mb-4 text-center fw-bold" style="color:white !important;">PDF Content Upload</h2>
+
+                            <!-- Thumbnail Image Container -->
+                            <div class="mb-3">
+                                <label for="thumbnail" class="form-label">Thumbnail Image</label>
+                                <div class="d-flex align-items-center">
+                                    <div class="me-2">
+                                        <input type="file" class="form-control" id="thumbnail" name="thumbnail"
+                                            onchange="displayThumbnail(this)">
+                                    </div>
+                                    <div id="thumbnail-container"
+                                        style="width: 100px; height: 100px; border: 1px solid #ccc;">
+                                    </div>
+                                </div>
+                                <small id="thumbnail-file-name" class="form-text text-muted"></small>
+                            </div>
+
+                            <!-- Upload PDF File -->
+                            <div class="mb-3">
+                                <label for="pdfFile" class="form-label">Upload PDF File</label>
+                                <div class="d-flex align-items-center">
+                                    <div class="me-2">
+                                        <input type="file" class="form-control" id="pdfFile" name="pdfFile"
+                                            onchange="displayFileName(this, 'pdf-file-name')">
+                                    </div>
+                                    <small id="pdf-file-name" class="form-text text-muted"></small>
+                                </div>
+                            </div>
+
+                            <!-- Content/Subscription -->
+                            <div class="mb-3">
+                                <label for="content" class="form-label">PDF Content</label>
+                                <input type="text" class="form-control custom-content-input" id="content"
+                                    name="content">
+                            </div>
+                            <div class="mb-3">
+                                <label for="issuePrice" class="form-label">Issue Price</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">₹</span>
+                                    <input type="text" class="form-control" id="issuePrice" name="issuePrice">
+                                </div>
+                            </div>
+                            <!-- Submit Button -->
+                            <div class="text-center mb-4">
+                                <button type="submit" class="btn-1 btn-primary">Submit</button>
+                            </div>
+                        </form>
                     </div>
+
                 </div>
-            </nav>
 
-        <main>
+                <div class="card mb-5">
+                    <div class="container rounded custom-container" id="container-1">
+                        <form onsubmit="(e)=>{e.preventDefault()}">
+                            <h2 class="mb-4 text-center fw-bold" style="color:white !important;">Content Issue
+                                Subscription</h2>
 
-            <div class="container-1  ">
+                            <!-- Thumbnail Image Container -->
+                            <div class="mb-3">
+                                <label for="thumbnail" class="form-label">Thumbnail Image</label>
+                                <div class="d-flex align-items-center">
+                                    <div class="me-2">
+                                        <input type="file" class="form-control" id="thumbnail" name="thumbnail"
+                                            onchange="displayThumbnail(this)">
+                                    </div>
+                                    <div id="thumbnail-container"
+                                        style="width: 100px; height: 100px; border: 1px solid #ccc;">
+                                    </div>
+                                </div>
+                                <small id="thumbnail-file-name" class="form-text text-muted"></small>
+                            </div>
 
-                <h1 id="heading">Admin Dashboard</h1>
-                <div>
-                    <div class="card mb-3">
-                        <div class="container rounded custom-container" id="container-1">
-                            <form  onsubmit="(e)=>{e.preventDefault()}">
-                                <h2 class="mb-4 text-center fw-bold" style="color:white !important;">PDF Content Upload</h2>
-            
-                                <!-- Thumbnail Image Container -->
-                                <div class="mb-3">
-                                    <label for="thumbnail" class="form-label">Thumbnail Image</label>
-                                    <div class="d-flex align-items-center">
-                                        <div class="me-2">
-                                            <input type="file" class="form-control" id="thumbnail" name="thumbnail"
-                                                onchange="displayThumbnail(this)">
-                                        </div>
-                                        <div id="thumbnail-container" style="width: 100px; height: 100px; border: 1px solid #ccc;">
-                                        </div>
-                                    </div>
-                                    <small id="thumbnail-file-name" class="form-text text-muted"></small>
-                                </div>
-            
-                                <!-- Upload PDF File -->
-                                <div class="mb-3">
-                                    <label for="pdfFile" class="form-label">Upload PDF File</label>
-                                    <div class="d-flex align-items-center">
-                                        <div class="me-2">
-                                            <input type="file" class="form-control" id="pdfFile" name="pdfFile"
-                                                onchange="displayFileName(this, 'pdf-file-name')">
-                                        </div>
-                                        <small id="pdf-file-name" class="form-text text-muted"></small>
-                                    </div>
-                                </div>
-            
-                                <!-- Content/Subscription -->
-                                <div class="mb-3">
-                                    <label for="content" class="form-label">Content</label>
-                                    <input type="text" class="form-control custom-content-input" id="content" name="content">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="issuePrice" class="form-label">Issue Price</label>
-                                    <div class="input-group">
-                                        <span class="input-group-text">₹</span>
-                                        <input type="text" class="form-control" id="issuePrice" name="issuePrice">
-                                    </div>
-                                </div>
-                                <!-- Submit Button -->
-                                <div class="text-center mb-4">
-                                    <button type="submit" class="btn-1 btn-primary">Submit</button>
-                                </div>
-                            </form>
-                        </div>
-            
-                    </div>
-            
-                    <div class="card mb-5">
-                        <div class="container rounded custom-container" id="container-1">
-                            <form onsubmit="(e)=>{e.preventDefault()}">
-                                <h2 class="mb-4 text-center fw-bold"style="color:white !important;">Content Issue Subscription</h2>
-            
-                                <!-- Thumbnail Image Container -->
-                                <div class="mb-3">
-                                    <label for="thumbnail" class="form-label">Thumbnail Image</label>
-                                    <div class="d-flex align-items-center">
-                                        <div class="me-2">
-                                            <input type="file" class="form-control" id="thumbnail" name="thumbnail"
-                                                onchange="displayThumbnail(this)">
-                                        </div>
-                                        <div id="thumbnail-container" style="width: 100px; height: 100px; border: 1px solid #ccc;">
-                                        </div>
-                                    </div>
-                                    <small id="thumbnail-file-name" class="form-text text-muted"></small>
-                                </div>
-            
-                                <!-- Issue Name -->
-                                <!-- <div class="mb-3">
+                            <!-- Issue Name -->
+                            <!-- <div class="mb-3">
                                     <label for="issueName" class="form-label">Issue Name</label>
                                     <input type="text" class="form-control" id="issueName" name="issueName">
                                 </div> -->
-            
-                                <!-- Issue Date/Version -->
-                                <div class="mb-3">
-                                    <label for="issueDate" class="form-label">Issue Date/Version</label>
-                                    <input type="text" class="form-control" id="issueDate" name="issueDate">
+
+                            <!-- Issue Date/Version -->
+                            <div class="mb-3">
+                                <label for="issueDate" class="form-label">Issue Date/Version</label>
+                                <input type="text" class="form-control" id="issueDate" name="issueDate">
+                            </div>
+
+                            <!-- Issue Price -->
+                            <div class="mb-3">
+                                <label for="issuePrice" class="form-label">Issue Price</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">₹</span>
+                                    <input type="text" class="form-control" id="issuePrice" name="issuePrice">
                                 </div>
-            
-                                <!-- Issue Price -->
+                            </div>
+
+                            <div class=" p-2 custom-container border mb-2 rounded-3">
                                 <div class="mb-3">
-                                    <label for="issuePrice" class="form-label">Issue Price</label>
+                                    <label for="issueTopic" class="form-label">Issue Topic</label>
                                     <div class="input-group">
-                                        <span class="input-group-text">₹</span>
-                                        <input type="text" class="form-control" id="issuePrice" name="issuePrice">
+                                        <input type="text" class="form-control" id="issueTopic" name="issueTopic">
                                     </div>
                                 </div>
-            
-                                <div class="p-2 custom-container border mb-2 rounded-3">
-                                    <div class="mb-3">
-                                        <label for="issueTopic" class="form-label">Issue Topic</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" id="issueTopic" name="issueTopic">
-                                        </div>
-                                    </div>
-                                
-                                    <div class="mb-3">
-                                        <label for="issueName" class="form-label">Issue Name</label>
-                                        <input type="text" class="form-control" id="issueName" name="issueName">
-                                    </div>
-                                
-                                    <div class="mb-3">
-                                        <label for="issueTopicContent" class="form-label">Issue Content</label>
-                                        <textarea class="form-control" id="issueTopicContent" name="issueTopicContent" rows="4"></textarea>
-                                    </div>
-                                
-                                    <div class="text-end">
-                                        <button type="button" class="btn-1 btn-primary" id="addButton">Add</button>
-                                    </div>
-                                
-                                    <div class="custom-container mt-4">
-                                        <table class="table" id="dataTable">
-                                            <thead>
-                                                <tr>
-                                                    <th>Issue Topic</th>
-                                                    <th>Issue Name</th>
-                                                    <th>Issue Content</th>
-                                                    <th>Action</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <!-- Table rows will be dynamically added here -->
-                                            </tbody>
-                                        </table>
-                                    </div>
+
+                                <div class="mb-3">
+                                    <label for="issueName" class="form-label">Issue Name</label>
+                                    <input type="text" class="form-control" id="issueName" name="issueName">
                                 </div>
-                                
-                                <!-- Submit Button -->
-                                <div class="text-center mb-4">
-                                    <button type="submit" class="btn-1 btn-primary">Submit</button>
+
+                                <div class="mb-3">
+                                    <label for="issueTopicContent" class="form-label">Issue Content</label>
+                                    <textarea class="form-control" id="issueTopicContent" name="issueTopicContent"
+                                        rows="4"></textarea>
                                 </div>
-                            </form>
-                        </div>
+                                <div class="text-end">
+                                    <button type="button" class="btn-1 btn-primary" id="addButton">Add</button>
+                                </div>
+                                <div class=" custom-container mt-4 ">
+                                    <table class="table  " id="dataTable">
+                                        <thead>
+                                            <tr>
+                                                <th>Issue Topic</th>
+                                                <th>Issue Name</th>
+                                                <th>Issue Content</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- Table rows will be dynamically added here -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="text-center mb-4">
+                                <button type="submit" class="btn-1 btn-primary">Submit</button>
+                            </div>
+                        </form>
                     </div>
-            
-                    <div class="blob"></div>
                 </div>
+
+                <div class="blob"></div>
             </div>
-            <!-- login end -->
+        </div>
+        <!-- login end -->
 
 
-            
-        </main>
 
-        <footer class="site-footer">
-            <div class="container">
-                <div class="row">
-                    <!-- <div class="col-lg-3 col-12 mb-4">
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <!-- <div class="col-lg-3 col-12 mb-4">
                         <img src="images/logo.png" class="logo img-fluid" alt="">
                     </div> -->
-    
-                    <div class="col-lg-6 col-md-6 col-12 mb-4">
-                        <h5 class="site-footer-title mb-3" style="color:rgb(255, 255, 255)">Quick Links</h5>
-    
-                        <div class="d-flex flex-column justify-content-center">
-                            <a href="https://www.guwahatigrandpoetryfestival.com/">
-    
-                                <p class="mb-0" style="color:rgb(240, 240, 240)">Soul Connection Magazine is the property of Guwahati Grand Poetry Festival,
-                                </p>
-                                <p class="mb-0" style="color:rgb(0, 255, 247)"><strong>An Independent, Non-Profit Organization.</strong></p>
-    
-                            </a>
-                        </div>
-                    </div>
-    
-                    <div class="col-lg-6 col-md-6 col-12 mx-auto">
-                        <h5 class="site-footer-title mb-3" style="color:rgb(255, 255, 255)" >Contact Infomation</h5>
-    
-                        <p class="text-white d-flex mb-2" >
-                            <i class="bi-telephone me-2"></i>
-                            <strong style="color:rgb(240, 240, 240)" class="me-2">Mobile: </strong>
-                            <a style="color:rgb(240, 240, 240)" href="tel:+917896454751" class="site-footer-link">+91 7896454751</a>
-                        </p>
-    
-                        <p class="text-white d-flex">
-                            <i class="bi-envelope me-2"></i>
-                            <strong class="me-2" style="color:rgb(240, 240, 240)">Email: </strong>
-                            <a style="color:rgb(240, 240, 240)" href="mailto:editor@soulconnectionne.in" class="site-footer-link">
-                                editor@soulconnectionne.in
-                            </a>
-                        </p>
-    
-                        <p class=" d-flex mt-3" style="color:rgb(240, 240, 240)">
-                            <i class="bi-geo-alt me-2"></i>
-                            <strong class="me-2" style="color:rgb(240, 240, 240)">Address: </strong>
-                            House No. 09, Dr. Bhupen Hazarika Road, Kharghuli, Guwahati, Assam.
-                        </p>
-                        <p class=" d-flex mt-3" style="color:rgb(240, 240, 240)">
-                            <i class="bi bi-geo-fill"></i>
-                            <strong class="me-2 ms-2" style="color:rgb(240, 240, 240)">Pincode: </strong>
-                            781004
-                        </p>
-    
-                        <!-- <a href="#" class="custom-btn btn mt-3">Get Direction</a> -->
+
+                <div class="col-lg-6 col-md-6 col-12 mb-4">
+                    <h5 class="site-footer-title mb-3" style="color:rgb(255, 255, 255)">Quick Links</h5>
+
+                    <div class="d-flex flex-column justify-content-center">
+                        <a href="https://www.guwahatigrandpoetryfestival.com/">
+
+                            <p class="mb-0" style="color:rgb(240, 240, 240)">Soul Connection Magazine is the property of
+                                Guwahati Grand Poetry Festival,
+                            </p>
+                            <p class="mb-0" style="color:rgb(0, 255, 247)"><strong>An Independent, Non-Profit
+                                    Organization.</strong></p>
+
+                        </a>
                     </div>
                 </div>
+
+                <div class="col-lg-6 col-md-6 col-12 mx-auto">
+                    <h5 class="site-footer-title mb-3" style="color:rgb(255, 255, 255)">Contact Infomation</h5>
+
+                    <p class="text-white d-flex mb-2">
+                        <i class="bi-telephone me-2"></i>
+                        <strong style="color:rgb(240, 240, 240)" class="me-2">Mobile: </strong>
+                        <a style="color:rgb(240, 240, 240)" href="tel:+917896454751" class="site-footer-link">+91
+                            7896454751</a>
+                    </p>
+
+                    <p class="text-white d-flex">
+                        <i class="bi-envelope me-2"></i>
+                        <strong class="me-2" style="color:rgb(240, 240, 240)">Email: </strong>
+                        <a style="color:rgb(240, 240, 240)" href="mailto:editor@soulconnectionne.in"
+                            class="site-footer-link">
+                            editor@soulconnectionne.in
+                        </a>
+                    </p>
+
+                    <p class=" d-flex mt-3" style="color:rgb(240, 240, 240)">
+                        <i class="bi-geo-alt me-2"></i>
+                        <strong class="me-2" style="color:rgb(240, 240, 240)">Address: </strong>
+                        House No. 09, Dr. Bhupen Hazarika Road, Kharghuli, Guwahati, Assam.
+                    </p>
+                    <p class=" d-flex mt-3" style="color:rgb(240, 240, 240)">
+                        <i class="bi bi-geo-fill"></i>
+                        <strong class="me-2 ms-2" style="color:rgb(240, 240, 240)">Pincode: </strong>
+                        781004
+                    </p>
+
+                    <!-- <a href="#" class="custom-btn btn mt-3">Get Direction</a> -->
+                </div>
             </div>
-    
-            <div class="site-footer-bottom">
-                <div class="container">
-                    <div class="row">
-    
-                        <!-- <div class="col-lg-6 col-md-7 col-12">
+        </div>
+
+        <div class="site-footer-bottom">
+            <div class="container">
+                <div class="row">
+
+                    <!-- <div class="col-lg-6 col-md-7 col-12">
                             <p class="copyright-text mb-0">Copyright © 2036 <a href="#">Kind Heart</a> Charity Org.
                                 Design: <a href="https://templatemo.com" target="_blank">TemplateMo</a></p>
                         </div> -->
-    
-                        <!-- <div class="col-lg-6 col-md-5 col-12 d-flex justify-content-center align-items-center mx-auto">
+
+                    <!-- <div class="col-lg-6 col-md-5 col-12 d-flex justify-content-center align-items-center mx-auto">
                             <ul class="social-icon">
                                 <li class="social-icon-item">
                                     <a href="#" class="social-icon-link bi-twitter"></a>
@@ -586,48 +612,61 @@ margin-right: auto;
                                 </li>
                             </ul>
                         </div> -->
-    
-                    </div>
+
                 </div>
             </div>
-        </footer>
+        </div>
+    </footer>
 
-        <!-- JAVASCRIPT FILES -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/jquery.sticky.js"></script>
-        <script src="js/click-scroll.js"></script>
-        <script src="js/counter.js"></script>
-        <script src="js/custom.js"></script>
-        <script>
-            document.getElementById('addButton').addEventListener('click', function() {
-                // Get input values
-                var issueTopic = document.getElementById('issueTopic').value;
-                var issueName = document.getElementById('issueName').value;
-                var issueContent = document.getElementById('issueTopicContent').value;
-        
-                // Create a new row
-                var row = document.createElement('tr');
-                row.innerHTML = '<td>' + issueTopic + '</td>' +
-                                '<td>' + issueName + '</td>' +
-                                '<td>' + issueContent + '</td>' +
-                                '<td><button type="button" class="btn btn-danger btn-sm" onclick="deleteRow(this)">Delete</button></td>';
-        
-                // Append the row to the table
-                document.getElementById('dataTable').getElementsByTagName('tbody')[0].appendChild(row);
-        
-                // Clear input fields
-                document.getElementById('issueTopic').value = '';
-                document.getElementById('issueName').value = '';
-                document.getElementById('issueTopicContent').value = '';
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/click-scroll.js"></script>
+    <script src="js/counter.js"></script>
+    <script src="js/custom.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Add button functionality
+            $("#addButton").click(function () {
+                var issueTopic = $("#issueTopic").val();
+                var issueName = $("#issueName").val();
+                var issueContent = $("#issueTopicContent").val();
+
+                if (issueTopic && issueName && issueContent) {
+                    // Create a new table row
+                    var newRow = $("<tr>");
+                    newRow.append("<td>" + issueTopic + "</td>");
+                    newRow.append("<td>" + issueName + "</td>");
+                    newRow.append("<td>" + issueContent + "</td>");
+                    newRow.append('<td><button class="btn btn-danger btn-sm deleteButton">Delete</button></td>');
+
+                    // Append the new row to the table body
+                    $("#dataTable tbody").append(newRow);
+
+                    // Show the table
+                    $("#dataTable").show();
+
+                    // Clear input fields
+                    $("#issueTopic, #issueName, #issueTopicContent").val("");
+                } else {
+                    alert("Please fill in all the fields.");
+                }
             });
-        
-            function deleteRow(button) {
-                // Delete the row when the delete button is clicked
-                var row = button.parentNode.parentNode;
-                row.parentNode.removeChild(row);
-            }
-        </script>
 
-    </body>
+            // Delete button functionality
+            $("#dataTable").on("click", ".deleteButton", function () {
+                $(this).closest("tr").remove();
+
+                // Hide the table if there are no rows
+                if ($("#dataTable tbody tr").length === 0) {
+                    $("#dataTable").hide();
+                }
+            });
+        });
+    </script>
+
+</body>
+
 </html>
