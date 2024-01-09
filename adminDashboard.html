@@ -155,7 +155,7 @@ margin-right: auto;
     body {
         background: #91a5ab !important;
     }
-
+/* 
     .container {
         width: 100%;
         display: flex;
@@ -165,7 +165,7 @@ margin-right: auto;
         position: relative;
         overflow-x: hidden;
         margin-top: 5%;
-    }
+    } */
     
 
     #heading {
@@ -355,7 +355,7 @@ margin-right: auto;
                     <div class="card mb-3">
                         <div class="container rounded custom-container" id="container-1">
                             <form  onsubmit="(e)=>{e.preventDefault()}">
-                                <h2 class="mb-4 text-center fw-bold">PDF Content Upload</h2>
+                                <h2 class="mb-4 text-center fw-bold" style="color:white !important;">PDF Content Upload</h2>
             
                                 <!-- Thumbnail Image Container -->
                                 <div class="mb-3">
@@ -388,7 +388,13 @@ margin-right: auto;
                                     <label for="content" class="form-label">Content</label>
                                     <input type="text" class="form-control custom-content-input" id="content" name="content">
                                 </div>
-            
+                                <div class="mb-3">
+                                    <label for="issuePrice" class="form-label">Issue Price</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">₹</span>
+                                        <input type="text" class="form-control" id="issuePrice" name="issuePrice">
+                                    </div>
+                                </div>
                                 <!-- Submit Button -->
                                 <div class="text-center mb-4">
                                     <button type="submit" class="btn-1 btn-primary">Submit</button>
@@ -401,7 +407,7 @@ margin-right: auto;
                     <div class="card mb-5">
                         <div class="container rounded custom-container" id="container-1">
                             <form onsubmit="(e)=>{e.preventDefault()}">
-                                <h2 class="mb-4 text-center fw-bold"style="color:white !important;">Content Subscription</h2>
+                                <h2 class="mb-4 text-center fw-bold"style="color:white !important;">Content Issue Subscription</h2>
             
                                 <!-- Thumbnail Image Container -->
                                 <div class="mb-3">
