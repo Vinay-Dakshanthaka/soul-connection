@@ -1,27 +1,28 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <meta name="description" content="">
-        <meta name="author" content="">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Login</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
 
-        <!-- CSS FILES -->        
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+	<title>Login</title>
 
-        <link href="css/bootstrap-icons.css" rel="stylesheet">
+	<!-- CSS FILES -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
 
-        <link href="css/template.css" rel="stylesheet">
-        <!-- Font Awesome -->
+	<link href="css/bootstrap-icons.css" rel="stylesheet">
+
+	<link href="css/template.css" rel="stylesheet">
+	<!-- Font Awesome -->
 	<script src="https://kit.fontawesome.com/356940580b.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
 		crossorigin="anonymous">
 
-        <style>
-            /* ---------------- login------------------ */
+	<style>
+		/* ---------------- login------------------ */
 		.ftco-section {
 			padding: 2% 0% 7% 0%;
 		}
@@ -85,7 +86,7 @@
 			box-shadow: none;
 			border: 1px solid rgba(0, 0, 0, 0.1);
 		}
-		
+
 
 		.form-control::-webkit-input-placeholder {
 			/* Chrome/Opera/Safari */
@@ -201,6 +202,7 @@
 			height: 0;
 			width: 0;
 		}
+
 		/* span{
 			font-size: 2rem;
 		} */
@@ -211,7 +213,8 @@
 			top: 0;
 			left: 0;
 		}
-		.submit{
+
+		.submit {
 			font-size: 1.2rem;
 		}
 
@@ -291,40 +294,95 @@
 			background: #5bc1ac;
 			color: #fff;
 		}
-		/* #forgotPassword{
-			font-size: 0.5rem;
-		} */
-        </style>
 
 
-    </head>
+    .gi-login-wrap {
+      display: block;
+      margin-bottom: 10px;
+    }
+	.gi-login-btn,
+    .gi-login-fp {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .gi-login-btn {
+      text-align: center;
+    }
+
+    .gi-btn-1 {
+      background-color: #5bc1ac;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+	.gi-btn-1:hover {
+      background-color: #0a343c;
+      color: #5bc1ac;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
     
-    <body id="section_1">
 
-        <header class="site-header">
-			<div class="container">
-				<div class="row">
-	
-					<div class="row d-flex ">
-						<div class="col-lg-6 col-sm-12 d-flex align-items-center flex-wrap">
-							<p class="d-flex  me-4 mb-0">
-								<i class="bi bi-globe me-2"></i>
-								<a class="top-a" href="https://www.soulconnectionne.in" target="_blank">
-									<span class="fs-sm">www.soulconnectionne.in</span>
-								</a>
-							</p>
-						</div>
-						<div class="col-lg-6 col-sm-12 d-flex flex-wrap justify-content-end  align-items-center  top-a-2">
-							<p class="d-flex mb-0">
-								<i class="bi bi-envelope me-2"></i>
-								<a class="top-a" href="mailto:editor@soulconnectionne.in">
-									<span class="fs-sm">editor@soulconnectionne.in</span>
-								</a>
-							</p>
-						</div>
+    #backToLoginButton {
+      color: #5bc1ac;
+      text-decoration: none;
+	  
+    }
+
+    
+	</style>
+
+
+</head>
+
+<body id="section_1">
+
+	<header class="site-header">
+		<div class="container">
+			<div class="row">
+
+				<div class="row d-flex ">
+					<div class="col-lg-6 col-sm-12 d-flex align-items-center flex-wrap">
+						<p class="d-flex  me-4 mb-0">
+							<i class="bi bi-globe me-2"></i>
+							<a class="top-a" href="https://www.soulconnectionne.in" target="_blank">
+								<span class="fs-sm">www.soulconnectionne.in</span>
+							</a>
+						</p>
 					</div>
-	
-					<!-- <div class="col-lg-3 col-12 ms-auto d-lg-block d-none">
+					<div class="col-lg-6 col-sm-12 d-flex flex-wrap justify-content-end  align-items-center  top-a-2">
+						<p class="d-flex mb-0">
+							<i class="bi bi-envelope me-2"></i>
+							<a class="top-a" href="mailto:editor@soulconnectionne.in">
+								<span class="fs-sm">editor@soulconnectionne.in</span>
+							</a>
+						</p>
+					</div>
+				</div>
+
+				<!-- <div class="col-lg-3 col-12 ms-auto d-lg-block d-none">
 							<ul class="social-icon">
 								<li class="social-icon-item">
 									<a href="#" class="social-icon-link bi-twitter"></a>
@@ -347,53 +405,53 @@
 								</li>
 							</ul>
 						</div> -->
-	
-				</div>
+
 			</div>
-		</header>
-	
-		<nav class="navbar navbar-expand-lg bg-light shadow-lg">
-			<div class="container">
-				<a class="navbar-brand" href="index.html">
-					<!-- <img src="images/logo.png" class="logo img-fluid" alt="Kind Heart Charity"> -->
-					<span>
-						Soul Connection Magazine
-						<small>Non-profit Organization</small>
-					</span>
-				</a>
-	
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-					aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-	
-				<div class="collapse navbar-collapse" id="navbarNav">
-					<ul class="navbar-nav ms-auto">
-						<li class="nav-item">
-							<a class="nav-link " href="index.html">Home</a>
-						</li>
-	
-						<li class="nav-item">
-							<a class="nav-link" href="about.html">About</a>
-						</li>
-	
-						<li class="nav-item">
-							<a class="nav-link" href="#">Current Issues</a>
-						</li>
-	
-						<li class="nav-item">
-							<a class="nav-link" href="archive.html">Archive</a>
-						</li>
-	
-						<li class="nav-item">
-							<a class="nav-link" href="submission.html">Submission</a>
-						</li>
-	
-						<li class="nav-item">
-							<a class="nav-link" href="./adminDashboard.html">Dashboard</a>
-						</li>
-	
-						<!-- <li class="nav-item dropdown">
+		</div>
+	</header>
+
+	<nav class="navbar navbar-expand-lg bg-light shadow-lg">
+		<div class="container">
+			<a class="navbar-brand" href="index.html">
+				<!-- <img src="images/logo.png" class="logo img-fluid" alt="Kind Heart Charity"> -->
+				<span>
+					Soul Connection Magazine
+					<small>Non-profit Organization</small>
+				</span>
+			</a>
+
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav ms-auto">
+					<li class="nav-item">
+						<a class="nav-link " href="index.html">Home</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="about.html">About</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="#">Current Issues</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="archive.html">Archive</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="submission.html">Submission</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="./adminDashboard.html">Dashboard</a>
+					</li>
+
+					<!-- <li class="nav-item dropdown">
 								<a class="nav-link click-scroll dropdown-toggle" href="#section_5" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">News</a>
 	
 								<ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
@@ -402,147 +460,168 @@
 									<li><a class="dropdown-item" href=""></a></li>
 								</ul>
 							</li> -->
-	
-						<li class="nav-item">
-							<a class="nav-link " href="contact.html">Contact</a>
-						</li>
-	
-						<li class="nav-item ms-3">
-							<a class="nav-link custom-btn custom-border-btn btn active" href="login.html">Login</a>
-						</li>
-					</ul>
-				</div>
+
+					<li class="nav-item">
+						<a class="nav-link " href="contact.html">Contact</a>
+					</li>
+
+					<li class="nav-item ms-3">
+						<a class="nav-link custom-btn custom-border-btn btn active" href="login.html">Login</a>
+					</li>
+				</ul>
 			</div>
-		</nav>
+		</div>
+	</nav>
 
-        <main>
+	<main>
 
-            <section class="ftco-section home">
-                <!-- login start -->
-        
-                <div class="container mt-5 ">
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-md-7 col-lg-5">
-                            <div class="wrap">
-                                <div class="row justify-content-center">
-                                    <div class="col-md-7 text-center mb-5">
-                                        <h2 class="heading-section mt-5 mb-0">Login</h2>
-                                    </div>
-                                </div>
-                                <div class="content-wrap p-4 p-md-5 mt-0">
-                                    <div class="d-flex">
-                                        <div class="w-100">
-                                            <!-- <h3 class="mb-4">Sign In</h3> -->
-                                        </div>
-        
-                                    </div>
-                                    <form action="#">
-                                        <div class="form-group mt-0">
-                                            <input type="email" class="form-control" required>
-                                            <label class="form-control-placeholder" for="email">Email</label>
-                                            <span id="" class="fa fa-envelope fa-fw field-icon"></span>
-        
-                                        </div>
-                                        <div class="form-group">
-                                            <input id="password-field" type="password" class="form-control" required>
-                                            <label class="form-control-placeholder" for="password">Password</label>
-                                            <span id="toggle-password" class="fa fa-fw fa-eye field-icon toggle-password"
-                                                onclick="togglePassword()"></span>
-                                        </div>
-                                        <div class="form-group">
-                                            <button type="submit" class="form-control btn btn-primary rounded submit px-3 ">Sign
-                                                In</button>
-                                        </div>
-                                        <div class="form-group d-flex justify-content-between">
-                                            <div class="w-50 text-left">
-                                                <label class="checkbox-wrap checkbox-primary mb-0">Remember Me
-                                                    <input type="checkbox" checked>
-                                                    <span class="checkmark"></span>
-                                                </label>
-                                            </div>
-                                            <div class=" text-right">
-                                                <a href="#" id="forgotPassword">Forgot Password ?</a>
-                                            </div>
-                                        </div>
-                                    </form>
-        
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        
-            </section>
-            <!-- login end -->
+		<section class="ftco-section home">
+			<!-- login start -->
 
+			<div class="container mt-5 ">
+				<div class="row justify-content-center">
+					<div class="col-12 col-md-7 col-lg-5">
+						<div class="wrap">
+							<div class="content-wrap p-4 mt-0">
+								<div class="d-flex">
+									<div class="w-100">
+										<!-- <h3 class="mb-4">Sign In</h3> -->
+									</div>
+									
+								</div>
+								<form action="#" id="loginForm">
+									<div class="row justify-content-center">
+										<div class="col-md-7 text-center mb-5">
+											<h2 class="heading-section mt-5 mb-0">Login</h2>
+										</div>
+									</div>
+									<div class="form-group mt-0">
+										<input type="email" class="form-control" required>
+										<label class="form-control-placeholder" for="email">Email</label>
+										<span id="" class="fa fa-envelope fa-fw field-icon"></span>
 
-            
-        </main>
+									</div>
+									<div class="form-group">
+										<input id="password-field" type="password" class="form-control" required>
+										<label class="form-control-placeholder" for="password">Password</label>
+										<span id="toggle-password" class="fa fa-fw fa-eye field-icon toggle-password"
+											onclick="togglePassword()"></span>
+									</div>
+									<div class="form-group">
+										<button type="submit"
+											class="form-control btn btn-primary rounded submit px-3 ">Sign
+											In</button>
+									</div>
+									<div class="form-group d-flex justify-content-between">
+										<div class="w-50 text-left">
+											<label class="checkbox-wrap checkbox-primary mb-0">Remember Me
+												<input type="checkbox" checked>
+												<span class="checkmark"></span>
+											</label>
+										</div>
+										<div class=" text-right">
+											<a href="#" id="forgotPasswordLink">Forgot Password ?</a>
+										</div>
+									</div>
+								</form>
+								<!-- Add the Forgot Password form (initially hidden) -->
+								<form id="forgotPasswordForm" style="display: none">
+									<span class="gi-login-wrap">
+										<label>Forgot Password*</label>
+										<input type="email" name="forgotEmail" id="forgotEmail"
+											placeholder="Enter your email" required class="mb-1">
+									</span>
 
-        <footer class="site-footer">
-			<div class="container">
-				<div class="row">
-					<!-- <div class="col-lg-3 col-12 mb-4">
-						<img src="images/logo.png" class="logo img-fluid" alt="">
-					</div> -->
-	
-					<div class="col-lg-6 col-md-6 col-12 mb-4">
-						<h5 class="site-footer-title mb-3" style="color:rgb(255, 255, 255)">Quick Links</h5>
-	
-						<div class="d-flex flex-column justify-content-center">
-							<a href="https://www.guwahatigrandpoetryfestival.com/">
-	
-								<p class="mb-0" style="color:rgb(240, 240, 240)">Soul Connection Magazine is the property of Guwahati Grand Poetry Festival,
-								</p>
-								<p class="mb-0" style="color:rgb(0, 255, 247)"><strong>An Independent, Non-Profit Organization.</strong></p>
-	
-							</a>
+									<span class="gi-login-wrap gi-login-fp d-flex justify-content-between align-items-center">
+										<span class="gi-login-wrap gi-login-btn">
+											<button class="gi-btn-1 btn" type="submit"
+												id="forgotPasswordSubmit">Submit</button>
+										</span>
+										<label><a href="#" id="backToLoginButton">Back to Login</a></label>
+									</span>
+								</form>
+
+							</div>
 						</div>
 					</div>
-	
-					<div class="col-lg-6 col-md-6 col-12 mx-auto">
-						<h5 class="site-footer-title mb-3" style="color:rgb(255, 255, 255)" >Contact Infomation</h5>
-	
-						<p class="text-white d-flex mb-2" >
-							<i class="bi-telephone me-2"></i>
-							<strong style="color:rgb(240, 240, 240)" class="me-2">Mobile: </strong>
-							<a style="color:rgb(240, 240, 240)" href="tel:+917896454751" class="site-footer-link">+91 7896454751</a>
-						</p>
-	
-						<p class="text-white d-flex">
-							<i class="bi-envelope me-2"></i>
-							<strong class="me-2" style="color:rgb(240, 240, 240)">Email: </strong>
-							<a style="color:rgb(240, 240, 240)" href="mailto:editor@soulconnectionne.in" class="site-footer-link">
-								editor@soulconnectionne.in
-							</a>
-						</p>
-	
-						<p class=" d-flex mt-3" style="color:rgb(240, 240, 240)">
-							<i class="bi-geo-alt me-2"></i>
-							<strong class="me-2" style="color:rgb(240, 240, 240)">Address: </strong>
-							House No. 09, Dr. Bhupen Hazarika Road, Kharghuli, Guwahati, Assam.
-						</p>
-						<p class=" d-flex mt-3" style="color:rgb(240, 240, 240)">
-							<i class="bi bi-geo-fill"></i>
-							<strong class="me-2 ms-2" style="color:rgb(240, 240, 240)">Pincode: </strong>
-							781004
-						</p>
-	
-						<!-- <a href="#" class="custom-btn btn mt-3">Get Direction</a> -->
-					</div>
 				</div>
 			</div>
-	
-			<div class="site-footer-bottom">
-				<div class="container">
-					<div class="row">
-	
-						<!-- <div class="col-lg-6 col-md-7 col-12">
+
+		</section>
+		<!-- login end -->
+
+
+
+	</main>
+
+	<footer class="site-footer">
+		<div class="container">
+			<div class="row">
+				<!-- <div class="col-lg-3 col-12 mb-4">
+						<img src="images/logo.png" class="logo img-fluid" alt="">
+					</div> -->
+
+				<div class="col-lg-6 col-md-6 col-12 mb-4">
+					<h5 class="site-footer-title mb-3" style="color:rgb(255, 255, 255)">Quick Links</h5>
+
+					<div class="d-flex flex-column justify-content-center">
+						<a href="https://www.guwahatigrandpoetryfestival.com/">
+
+							<p class="mb-0" style="color:rgb(240, 240, 240)">Soul Connection Magazine is the property of
+								Guwahati Grand Poetry Festival,
+							</p>
+							<p class="mb-0" style="color:rgb(0, 255, 247)"><strong>An Independent, Non-Profit
+									Organization.</strong></p>
+
+						</a>
+					</div>
+				</div>
+
+				<div class="col-lg-6 col-md-6 col-12 mx-auto">
+					<h5 class="site-footer-title mb-3" style="color:rgb(255, 255, 255)">Contact Infomation</h5>
+
+					<p class="text-white d-flex mb-2">
+						<i class="bi-telephone me-2"></i>
+						<strong style="color:rgb(240, 240, 240)" class="me-2">Mobile: </strong>
+						<a style="color:rgb(240, 240, 240)" href="tel:+917896454751" class="site-footer-link">+91
+							7896454751</a>
+					</p>
+
+					<p class="text-white d-flex">
+						<i class="bi-envelope me-2"></i>
+						<strong class="me-2" style="color:rgb(240, 240, 240)">Email: </strong>
+						<a style="color:rgb(240, 240, 240)" href="mailto:editor@soulconnectionne.in"
+							class="site-footer-link">
+							editor@soulconnectionne.in
+						</a>
+					</p>
+
+					<p class=" d-flex mt-3" style="color:rgb(240, 240, 240)">
+						<i class="bi-geo-alt me-2"></i>
+						<strong class="me-2" style="color:rgb(240, 240, 240)">Address: </strong>
+						House No. 09, Dr. Bhupen Hazarika Road, Kharghuli, Guwahati, Assam.
+					</p>
+					<p class=" d-flex mt-3" style="color:rgb(240, 240, 240)">
+						<i class="bi bi-geo-fill"></i>
+						<strong class="me-2 ms-2" style="color:rgb(240, 240, 240)">Pincode: </strong>
+						781004
+					</p>
+
+					<!-- <a href="#" class="custom-btn btn mt-3">Get Direction</a> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="site-footer-bottom">
+			<div class="container">
+				<div class="row">
+
+					<!-- <div class="col-lg-6 col-md-7 col-12">
 							<p class="copyright-text mb-0">Copyright © 2036 <a href="#">Kind Heart</a> Charity Org.
 								Design: <a href="https://templatemo.com" target="_blank">TemplateMo</a></p>
 						</div> -->
-	
-						<!-- <div class="col-lg-6 col-md-5 col-12 d-flex justify-content-center align-items-center mx-auto">
+
+					<!-- <div class="col-lg-6 col-md-5 col-12 d-flex justify-content-center align-items-center mx-auto">
 							<ul class="social-icon">
 								<li class="social-icon-item">
 									<a href="#" class="social-icon-link bi-twitter"></a>
@@ -565,19 +644,51 @@
 								</li>
 							</ul>
 						</div> -->
-	
-					</div>
+
 				</div>
 			</div>
-		</footer>
+		</div>
+	</footer>
 
-        <!-- JAVASCRIPT FILES -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/jquery.sticky.js"></script>
-        <script src="js/click-scroll.js"></script>
-        <script src="js/counter.js"></script>
-        <script src="js/custom.js"></script>
+	<!-- JAVASCRIPT FILES -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.sticky.js"></script>
+	<script src="js/click-scroll.js"></script>
+	<script src="js/counter.js"></script>
+	<script src="js/custom.js"></script>
+	<script>
+		function showLoginForm() {
+			const loginForm = document.getElementById("loginForm");
+			const forgotPasswordForm =
+				document.getElementById("forgotPasswordForm");
 
-    </body>
+			loginForm.style.display = "block";
+			forgotPasswordForm.style.display = "none";
+		}
+		// Add an event listener to the "Back to Login" button
+		const backToLoginButton = document.getElementById("backToLoginButton");
+		backToLoginButton.addEventListener("click", (e) => {
+			e.preventDefault();
+			showLoginForm();
+		});
+
+		// Function to show the "Forgot Password" form and hide the login form
+		function showForgotPasswordForm() {
+			const loginForm = document.getElementById("loginForm");
+			const forgotPasswordForm = document.getElementById("forgotPasswordForm");
+			loginForm.style.display = "none";
+			forgotPasswordForm.style.display = "block";
+		}
+
+		const forgotPasswordLink =
+			document.getElementById("forgotPasswordLink");
+		forgotPasswordLink.addEventListener("click", (e) => {
+			e.preventDefault();
+			showForgotPasswordForm();
+		});
+	</script>
+
+</body>
+
 </html>

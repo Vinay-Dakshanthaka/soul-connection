@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Admin Dashboard</title>
+
+    <!-- CSS FILES -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="css/template.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/356940580b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato&family=Poppins&display=swap');
+
+
+        body {
+            background-color: #ffffff;
+            font-family: 'Poppins', sans-serif
+        }
+
+        .wrapper {
+            background-color: #dbdbdb;
+            min-height: 100px;
+            max-width: 1080px;
+            margin: 10px auto;
+            padding: 10px 30px
+        }
+
+        .tra {
+            padding: 0.5rem 0rem
+        }
+
+        .tra .tra-brand {
+            font-size: 30px
+        }
+        .tra-brand p {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 3px;
+        }
+
+        .table-dark {
+            background-color: #222
+        }
+
+        .table thead th {
+            text-transform: uppercase;
+            color: #bbb;
+            font-size: 12px;
+            background: #5f0e0e;
+        }
+
+        .table thead th,
+        .table td,
+        .table th {
+            border: none;
+            overflow: auto auto
+        }
+
+        tbody tr td .fa-cc-mastercard,
+        tbody tr td .fa-cc-visa {
+            color: #bbb
+        }
+
+        tbody tr td.text-muted {
+            font-family: 'Lato', sans-serif
+        }
+
+        .results span {
+            color: #bbb;
+            font-size: 12px;
+        }
+
+        .results span b {
+            font-family: 'Lato', sans-serif
+        }
+
+        .pagination .page-item .page-link {
+            background-color: #007fc9;
+            color: #fff;
+            padding: 0.3rem .75rem;
+            border: none;
+            border-radius: 0
+        }
+
+        .pagination .page-item .page-link span {
+            font-size: 16px
+        }
+
+        .pagination .page-item.disabled .page-link {
+            background-color: #333;
+            color: #eee;
+            cursor: crosshair
+        }
+
+        @media(min-width:768px) and (max-width: 991px) {
+            .wrapper {
+                margin: auto
+            }
+        }
+
+        @media(min-width: 300px) and (max-width: 767px) {
+            .wrapper {
+                margin: auto
+            }
+        }
+
+        @media(max-width: 400px) {
+            .wrapper {
+                padding: 10px 15px;
+                margin: auto
+            }
+        }
+        .navbar-expand-lg .navbar-nav .nav-link.custom-btn{
+            padding:8px 25px;
+        }
+    </style>
+
+
+
+</head>
+
+<body id="section_1">
+
+    <header class="site-header">
+        <div class="container">
+            <div class="row">
+
+                <div class="row d-flex ">
+                    <div class="col-lg-6 col-sm-12 d-flex align-items-center flex-wrap">
+                        <p class="d-flex  me-4 mb-0">
+                            <i class="bi bi-globe me-2"></i>
+                            <a class="top-a" href="https://www.soulconnectionne.in" target="_blank">
+                                <span class="fs-sm">www.soulconnectionne.in</span>
+                            </a>
+                        </p>
+                    </div>
+                    <div class="col-lg-6 col-sm-12 d-flex flex-wrap justify-content-end  align-items-center  top-a-2">
+                        <p class="d-flex mb-0">
+                            <i class="bi bi-envelope me-2"></i>
+                            <a class="top-a" href="mailto:editor@soulconnectionne.in">
+                                <span class="fs-sm">editor@soulconnectionne.in</span>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg bg-light shadow-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <!-- <img src="images/logo.png" class="logo img-fluid" alt="Kind Heart Charity"> -->
+                <span>
+                    Soul Connection Magazine
+                    <small>Non-profit Organization</small>
+                </span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Current Issues</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="archive.html">Archive</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="submission.html">Submission</a>
+                    </li>
+
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link click-scroll dropdown-toggle active" href="#section_5"
+                            id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Admin panel</a>
+
+                        <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+                            <li><a class="dropdown-item" href="./user.html">Profile</a></li>
+                            <li><a class="dropdown-item" href="./adminDashboard.html">Admin Dashboard</a></li>
+                            <li><a class="dropdown-item" href="./transaction_details.html">Transaction Details</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link " href="contact.html">Contact</a>
+                    </li>
+
+                    <li class="nav-item ms-3">
+                        <a class="nav-link custom-btn custom-border-btn btn " href="login.html">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <h2 class="text-center mt-5">Transaction Details</h2>
+    <main>
+
+        <div class="wrapper rounded mb-5">
+            <tra class="tra tra-expand-lg tra-dark dark d-lg-flex align-items-lg-start"> <a class="tra-brand"
+                    href="#">Transactions <p class="text-muted pl-1">Welcome to your transactions
+                    </p>
+                    <div class="collapse tra-collapse" id="tratra">
+                        <ul class="tra-tra ml-lg-auto">
+                            <!-- <li class="tra-item"> <a class="tra-link" href="#"><span
+                                        class="fa fa-bell-o font-weight-bold"></span> <span
+                                        class="notify">Notifications</span> </a> </li> -->
+                            <!-- <li class="tra-item "> <a href="#"><span class="fa fa-search"></span></a> <input type="search"
+                                    class="dark" placeholder="Search"> </li> -->
+                        </ul>
+                    </div>
+            </tra>
+
+            <!-- <div class="d-flex justify-content-between align-items-center mt-3">
+                    <ul class="tra tra-tabs w-75">
+                        <li > <a  href="#history">History</a> </li>
+                        <li > <a  href="#">Reports</a> </li>
+                    </ul> <button class="btn btn-primary">New Transaction</button>
+                </div> -->
+            <div class="table-responsive mt-3 mb-1">
+                <table class="table table-dark table-borderless">
+                    <thead>
+                        <tr>
+                            <th scope="col">Book Title</th>
+                            <th scope="col">Mode</th>
+                            <th scope="col">Transaction Id</th>
+                            <th scope="col">Date</th>
+                            <th scope="col" class="text-right">Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row"> The Great Gatsby </td>
+                            <td><span class="fa fa-cc-mastercard"></span></td>
+                            <td scope="row">TXN001</td>
+                            <td class="text-muted">12 Jul 2023, 12:30 PM</td>
+                            <td class=""> ₹ 450/- </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">To Kill a Mockingbird</td>
+                            <td><span class="fa fa-cc-mastercard"></span></td>
+                            <td scope="row">TXN002</td>
+                            <td class="text-muted">11 Jul 2023, 2:00 PM</td>
+                            <td class=""> ₹ 650/-</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">1984</td>
+                            <td><span class="fa fa-cc-visa"></span></td>
+                            <td scope="row">TXN003</td>
+                            <td class="text-muted">10 Jul 2023, 8:30 PM</td>
+                            <td class=""> ₹ 600/-</td>
+                        </tr>
+                        <tr>
+                            <td scope="row"> The Catcher in the Rye</td>
+                            <td><span class="fa fa-cc-mastercard"></span></td>
+                            <td scope="row">TXN004</td>
+                            <td class="text-muted">12 May 2023, 4:30 PM</td>
+                            <td class=""> ₹ 820/- </td>
+                        </tr>
+                        <tr>
+                            <td scope="row"> Pride and Prejudice </td>
+                            <td><span class="fa fa-cc-visa"></span></td>
+                            <td scope="row">TXN005</td>
+                            <td class="text-muted">11 May 2023, 5:30 PM</td>
+                            <td class=""> ₹ 280/- </td>
+                        </tr>
+                        <tr>
+                            <td scope="row"> The Hobbit </td>
+                            <td><span class="fa fa-cc-mastercard"></span></td>
+                            <td scope="row">TXN006</td>
+                            <td class="text-muted">10 May 2023, 01:30 PM</td>
+                            <td class=""> ₹ 490/- </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">The Lord of the Rings </td>
+                            <td><span class="fa fa-cc-visa"></span></td>
+                            <td scope="row">TXN007</td>
+                            <td class="text-muted">09 May 2023, 01:30 PM</td>
+                            <td class=""> ₹ 900/- </td>
+                        </tr>
+                        <tr>
+                            <td scope="row"> The Great Gatsby </td>
+                            <td><span class="fa fa-cc-mastercard"></span></td>
+                            <td scope="row">TXN001</td>
+                            <td class="text-muted">12 Jul 2023, 12:30 PM</td>
+                            <td class=""> ₹ 450/- </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">To Kill a Mockingbird</td>
+                            <td><span class="fa fa-cc-mastercard"></span></td>
+                            <td scope="row">TXN002</td>
+                            <td class="text-muted">11 Jul 2023, 2:00 PM</td>
+                            <td class=""> ₹ 650/-</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">1984</td>
+                            <td><span class="fa fa-cc-visa"></span></td>
+                            <td scope="row">TXN003</td>
+                            <td class="text-muted">10 Jul 2023, 8:30 PM</td>
+                            <td class=""> ₹ 600/-</td>
+                        </tr>
+                        <tr>
+                            <td scope="row"> The Catcher in the Rye</td>
+                            <td><span class="fa fa-cc-mastercard"></span></td>
+                            <td scope="row">TXN004</td>
+                            <td class="text-muted">12 May 2023, 4:30 PM</td>
+                            <td class=""> ₹ 820/- </td>
+                        </tr>
+                        <tr>
+                            <td scope="row"> Pride and Prejudice </td>
+                            <td><span class="fa fa-cc-visa"></span></td>
+                            <td scope="row">TXN005</td>
+                            <td class="text-muted">11 May 2023, 5:30 PM</td>
+                            <td class=""> ₹ 280/- </td>
+                        </tr>
+                        <tr>
+                            <td scope="row"> The Hobbit </td>
+                            <td><span class="fa fa-cc-mastercard"></span></td>
+                            <td scope="row">TXN006</td>
+                            <td class="text-muted">10 May 2023, 01:30 PM</td>
+                            <td class=""> ₹ 490/- </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">The Lord of the Rings </td>
+                            <td><span class="fa fa-cc-visa"></span></td>
+                            <td scope="row">TXN007</td>
+                            <td class="text-muted">09 May 2023, 01:30 PM</td>
+                            <td class=""> ₹ 900/- </td>
+                        </tr>
+                        <tr>
+                            <td scope="row"> The Great Gatsby </td>
+                            <td><span class="fa fa-cc-mastercard"></span></td>
+                            <td scope="row">TXN001</td>
+                            <td class="text-muted">12 Jul 2023, 12:30 PM</td>
+                            <td class=""> ₹ 450/- </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">To Kill a Mockingbird</td>
+                            <td><span class="fa fa-cc-mastercard"></span></td>
+                            <td scope="row">TXN002</td>
+                            <td class="text-muted">11 Jul 2023, 2:00 PM</td>
+                            <td class=""> ₹ 650/-</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">1984</td>
+                            <td><span class="fa fa-cc-visa"></span></td>
+                            <td scope="row">TXN003</td>
+                            <td class="text-muted">10 Jul 2023, 8:30 PM</td>
+                            <td class=""> ₹ 600/-</td>
+                        </tr>
+                        <tr>
+                            <td scope="row"> The Catcher in the Rye</td>
+                            <td><span class="fa fa-cc-mastercard"></span></td>
+                            <td scope="row">TXN004</td>
+                            <td class="text-muted">12 May 2023, 4:30 PM</td>
+                            <td class=""> ₹ 820/- </td>
+                        </tr>
+                        <tr>
+                            <td scope="row"> Pride and Prejudice </td>
+                            <td><span class="fa fa-cc-visa"></span></td>
+                            <td scope="row">TXN005</td>
+                            <td class="text-muted">11 May 2023, 5:30 PM</td>
+                            <td class=""> ₹ 280/- </td>
+                        </tr>
+                        <tr>
+                            <td scope="row"> The Hobbit </td>
+                            <td><span class="fa fa-cc-mastercard"></span></td>
+                            <td scope="row">TXN006</td>
+                            <td class="text-muted">10 May 2023, 01:30 PM</td>
+                            <td class=""> ₹ 490/- </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">The Lord of the Rings </td>
+                            <td><span class="fa fa-cc-visa"></span></td>
+                            <td scope="row">TXN007</td>
+                            <td class="text-muted">09 May 2023, 01:30 PM</td>
+                            <td class=""> ₹ 900/- </td>
+                        </tr>
+                        <tr>
+                            <td scope="row"> The Great Gatsby </td>
+                            <td><span class="fa fa-cc-mastercard"></span></td>
+                            <td scope="row">TXN001</td>
+                            <td class="text-muted">12 Jul 2023, 12:30 PM</td>
+                            <td class=""> ₹ 450/- </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">To Kill a Mockingbird</td>
+                            <td><span class="fa fa-cc-mastercard"></span></td>
+                            <td scope="row">TXN002</td>
+                            <td class="text-muted">11 Jul 2023, 2:00 PM</td>
+                            <td class=""> ₹ 650/-</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">1984</td>
+                            <td><span class="fa fa-cc-visa"></span></td>
+                            <td scope="row">TXN003</td>
+                            <td class="text-muted">10 Jul 2023, 8:30 PM</td>
+                            <td class=""> ₹ 600/-</td>
+                        </tr>
+                        <tr>
+                            <td scope="row"> The Catcher in the Rye</td>
+                            <td><span class="fa fa-cc-mastercard"></span></td>
+                            <td scope="row">TXN004</td>
+                            <td class="text-muted">12 May 2023, 4:30 PM</td>
+                            <td class=""> ₹ 820/- </td>
+                        </tr>
+                        <tr>
+                            <td scope="row"> Pride and Prejudice </td>
+                            <td><span class="fa fa-cc-visa"></span></td>
+                            <td scope="row">TXN005</td>
+                            <td class="text-muted">11 May 2023, 5:30 PM</td>
+                            <td class=""> ₹ 280/- </td>
+                        </tr>
+                        <tr>
+                            <td scope="row"> The Hobbit </td>
+                            <td><span class="fa fa-cc-mastercard"></span></td>
+                            <td scope="row">TXN006</td>
+                            <td class="text-muted">10 May 2023, 01:30 PM</td>
+                            <td class=""> ₹ 490/- </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">The Lord of the Rings </td>
+                            <td><span class="fa fa-cc-visa"></span></td>
+                            <td scope="row">TXN007</td>
+                            <td class="text-muted">09 May 2023, 01:30 PM</td>
+                            <td class=""> ₹ 900/- </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="d-flex justify-content-between align-items-center results">
+                <!-- <span class="pl-md-3">Showing<b
+                            class="text-white"> 1-7 0f 200 </b> trasactions</span> -->
+                <div class="pt-3">
+                    <tra aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item disabled"> <a class="page-link" href="#" aria-label="Previous"> <span
+                                        aria-hidden="true">&lt;</span> </a> </li>
+                            <li class="page-item"> <a class="page-link" href="#" aria-label="Next"> <span
+                                        aria-hidden="true">&gt;</span> </a> </li>
+                        </ul>
+                    </tra>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <!-- <div class="col-lg-3 col-12 mb-4">
+                        <img src="images/logo.png" class="logo img-fluid" alt="">
+                    </div> -->
+
+                <div class="col-lg-6 col-md-6 col-12 mb-4">
+                    <h5 class="site-footer-title mb-3" style="color:rgb(255, 255, 255)">Quick Links</h5>
+
+                    <div class="d-flex flex-column justify-content-center">
+                        <a href="https://www.guwahatigrandpoetryfestival.com/">
+
+                            <p class="mb-0" style="color:rgb(240, 240, 240)">Soul Connection Magazine is the property of
+                                Guwahati Grand Poetry Festival,
+                            </p>
+                            <p class="mb-0" style="color:rgb(0, 255, 247)"><strong>An Independent, Non-Profit
+                                    Organization.</strong></p>
+
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-12 mx-auto">
+                    <h5 class="site-footer-title mb-3" style="color:rgb(255, 255, 255)">Contact Infomation</h5>
+
+                    <p class="text-white d-flex mb-2">
+                        <i class="bi-telephone me-2"></i>
+                        <strong style="color:rgb(240, 240, 240)" class="me-2">Mobile: </strong>
+                        <a style="color:rgb(240, 240, 240)" href="tel:+917896454751" class="site-footer-link">+91
+                            7896454751</a>
+                    </p>
+
+                    <p class="text-white d-flex">
+                        <i class="bi-envelope me-2"></i>
+                        <strong class="me-2" style="color:rgb(240, 240, 240)">Email: </strong>
+                        <a style="color:rgb(240, 240, 240)" href="mailto:editor@soulconnectionne.in"
+                            class="site-footer-link">
+                            editor@soulconnectionne.in
+                        </a>
+                    </p>
+
+                    <p class=" d-flex mt-3" style="color:rgb(240, 240, 240)">
+                        <i class="bi-geo-alt me-2"></i>
+                        <strong class="me-2" style="color:rgb(240, 240, 240)">Address: </strong>
+                        House No. 09, Dr. Bhupen Hazarika Road, Kharghuli, Guwahati, Assam.
+                    </p>
+                    <p class=" d-flex mt-3" style="color:rgb(240, 240, 240)">
+                        <i class="bi bi-geo-fill"></i>
+                        <strong class="me-2 ms-2" style="color:rgb(240, 240, 240)">Pincode: </strong>
+                        781004
+                    </p>
+
+                    <!-- <a href="#" class="custom-btn btn mt-3">Get Direction</a> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="site-footer-bottom">
+            <div class="container">
+                <div class="row">
+
+                    <!-- <div class="col-lg-6 col-md-7 col-12">
+                            <p class="copyright-text mb-0">Copyright © 2036 <a href="#">Kind Heart</a> Charity Org.
+                                Design: <a href="https://templatemo.com" target="_blank">TemplateMo</a></p>
+                        </div> -->
+
+                    <!-- <div class="col-lg-6 col-md-5 col-12 d-flex justify-content-center align-items-center mx-auto">
+                            <ul class="social-icon">
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link bi-twitter"></a>
+                                </li>
+    
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link bi-facebook"></a>
+                                </li>
+    
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link bi-instagram"></a>
+                                </li>
+    
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link bi-linkedin"></a>
+                                </li>
+    
+                                <li class="social-icon-item">
+                                    <a href="https://youtube.com/templatemo" class="social-icon-link bi-youtube"></a>
+                                </li>
+                            </ul>
+                        </div> -->
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/click-scroll.js"></script>
+    <script src="js/counter.js"></script>
+    <script src="js/custom.js"></script>
+
+</body>
+
+</html>
