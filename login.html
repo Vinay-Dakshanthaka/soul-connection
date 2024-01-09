@@ -655,6 +655,20 @@
 	<script src="js/counter.js"></script>
 	<script src="js/custom.js"></script>
 	<script>
+		function togglePassword() {
+        var passwordField = document.getElementById('password-field');
+        var toggleIcon = document.getElementById('toggle-password');
+
+        if (passwordField.type === 'password') {
+            passwordField.type = 'text';
+            toggleIcon.classList.remove('fa-eye');
+            toggleIcon.classList.add('fa-eye-slash');
+        } else {
+            passwordField.type = 'password';
+            toggleIcon.classList.remove('fa-eye-slash');
+            toggleIcon.classList.add('fa-eye');
+        }
+    }
 		function showLoginForm() {
 			const loginForm = document.getElementById("loginForm");
 			const forgotPasswordForm =
