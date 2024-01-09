@@ -422,7 +422,11 @@ strong {
   position: relative;
   text-align: left;
   padding-left: 6px;
+}
+.dropdown-menu :hover .dropdown-item{
   background-color: #717171;
+  color:white;
+
 }
 
 
