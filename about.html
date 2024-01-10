@@ -151,7 +151,7 @@
             #image-container {
                 margin-top: -3rem;
             }
-
+            #who-
             .drop {
                 display: none;
             }
@@ -178,10 +178,13 @@
             #publisher-heading{
                 font-size: 1.3rem;
             }
-            p{
+             .lead{
                 padding: 5px;
                 text-align: justify;
             }
+            /* p{
+                text-align: justify;
+            } */
             .card-body{
                 padding: 10px 0 !important;
             }
@@ -199,9 +202,20 @@
             }
             #right-column{
                 display: none;
+                margin: 0;
+                padding: 0;
+            }
+            .who-we-are{
+                margin-left: 0.1rem;
+                width: 100vw;
+            }
+            .drop{
+                display: none;
             }
         }
-
+        .address{
+            text-align: left;
+        }
 
         /* .card {
             width: 100%;
@@ -257,7 +271,7 @@
         .launching-date {
             font-size: 18px;
             font-weight: bold;
-            color: #28a745;
+            color: #28a745 !important;
         }
 
 
@@ -431,7 +445,7 @@
                 <h1 class="text-center text-black">About Us</h1>
             </div>
 
-            <div class="container ">
+            <div class="container who-we-are">
                 <div class="row mt-4 gap-5 ms-5">
                     <div class="col-md-7 " id="left-column">
                         <h2 id="who-we-are-heading">Who we are</h2>
@@ -489,13 +503,13 @@
                     </div>
                     <div class="col-md-6">
 
-                        <div class="card-body">
+                        <div class="card-body ms-3" style="text-align: left;">
 
                             <h5 class="card-title">Address</h5>
-                            <p class="card-text lead">House No. 09</p>
-                            <p class="card-text lead">Dr. Bhupen Hazarika Road</p>
-                            <p class="card-text lead">Kharghuli, Guwahati</p>
-                            <p class="card-text lead">Assam – 781004</p>
+                            <p class="card-text ">House No. 09</p>
+                            <p class="card-text ">Dr. Bhupen Hazarika Road</p>
+                            <p class="card-text ">Kharghuli, Guwahati</p>
+                            <p class="card-text ">Assam – 781004</p>
 
 
                             <h5 class="card-title mt-3">Launching Date</h5>
@@ -595,7 +609,7 @@
                             <h2 class="card-title"> Manjit Kr. Sarma</h2>
                             <p class="card-subtitle">Journalist, Author and Researcher</p>
                         </div>
-                        <div class=" text-center">
+                        <div class="text-center p-3">
                             <h5>Contact Information:</h5>
                             <p class="card-text lead"> <i class="bi bi-telephone-fill"></i> +91 7896454751</p>
                             <p class="card-text lead"><i class="bi bi-envelope-fill"></i> <a
@@ -604,9 +618,9 @@
                         <div class="drop drop-1" style="margin-left: -15%;"></div>
                     </div>
                     <!-- Right Column -->
-                    <div class="col-md-6">
+                    <div class="col-md-6 p-4">
                         <div class="card-body">
-                            <p class="lead text-justify border-bottom">
+                            <p class="lead text-justify border-bottom" style="text-align: justify;">
                                 <b> Manjit Kr. Sarma</b> is a journalist, author, and researcher. He wrote for different
                                 newspapers published from Assam and also worked as the Editor of a daily English
                                 Newspaper published from Guwahati in 2017. He is the Founder Trustee and Director of
