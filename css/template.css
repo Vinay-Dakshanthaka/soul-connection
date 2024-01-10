@@ -1727,7 +1727,10 @@ blockquote::before {
   }
   .top-a-2{
       /* background-color: #ddd; */
-      margin-top: -6%;
+      margin-top: -4%;
+  }
+  .second-link{
+    margin-left: 5%!important;
   }
       
 }
