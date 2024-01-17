@@ -26,7 +26,7 @@
 
         body {
             background-color: #ffffff;
-            font-family: 'Poppins', sans-serif
+            /* font-family: 'Poppins', sans-serif; */
         }
 
         .wrapper {
@@ -226,10 +226,10 @@
                             <a class="nav-link" href="submission.html">Submission</a>
                         </li>
 
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown" id="adminNav">
                                 <a class="nav-link click-scroll dropdown-toggle active" href="#section_5" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admin panel</a>
                                 <ul class="dropdown-menu dropdown-menu-light p-0" aria-labelledby="navbarLightDropdownMenuLink">
-                                    <li><a class="dropdown-item" href="./user.html">Profile</a></li>  
+                                    <li><a class="dropdown-item" href="./adminprofile.html">Profile</a></li>  
                                     <li><a class="dropdown-item" href="./adminDashboard.html">Admin Dashboard</a></li>
                                     <li><a class="dropdown-item active" href="./transaction_details.html">Transaction Details</a></li>
                                 </ul>
@@ -238,9 +238,13 @@
                             <a class="nav-link " href="contact.html">Contact Us</a>
                         </li>
     
-                        <li class="nav-item ms-3">
+                        <li class="nav-item ms-3" id="loginBtn">
                             <a class="nav-link custom-btn custom-border-btn btn" href="login.html">Login</a>
                         </li>
+                        <li class="nav-item ms-3" id="logoutBtn">
+                            <a class="nav-link custom-btn custom-border-btn btn" href="login.html">Logout</a>
+                        </li>
+
                     </ul>
                 </div>
             </div>
@@ -249,7 +253,7 @@
     <h2 class="text-center mt-5">Transaction Details</h2>
     <main>
 
-        <div class="wrapper rounded mb-5">
+        <div class="wrapper rounded mb-5 " id="transactionDetails">
             <tra class="tra tra-expand-lg tra-dark dark d-lg-flex align-items-lg-start"> <a class="tra-brand"
                     href="#">Transactions <p class="text-muted  no-space pl-1">Welcome to your transactions
                     </p>
@@ -607,6 +611,7 @@
     <script src="js/counter.js"></script>
     <script src="js/custom.js"></script>
 
+    <script type="module" src="./transactionDetails.js"></script>
 </body>
 
 </html>

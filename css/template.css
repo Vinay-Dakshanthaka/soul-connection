@@ -86,7 +86,9 @@ body {
   font-family: var(--body-font-family); 
 }
 
-
+#adminNav{
+  display: none;
+}
 /*---------------------------------------
   TYPOGRAPHY               
 -----------------------------------------*/

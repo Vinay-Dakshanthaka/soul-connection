@@ -351,13 +351,89 @@
 	  
     }
 
-    
+    .error{
+		color: red;
+		font-size: .8rem;
+		/* display: none; */
+	}
+
+	.toast-container {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 1000;
+      pointer-events: none;
+      animation: slide-in 0.5s ease-out forwards;
+    }
+
+    @keyframes slide-in {
+      0% { transform: translateX(100%); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+
+    .toast {
+      max-width: 300px;
+      margin: 10px;
+      pointer-events: auto;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .toast-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .toast-success {
+      background-color: #d4edda;
+      color: #155724;
+    }
+
+    .toast-error {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
 	</style>
 
 
 </head>
 
 <body id="section_1">
+
+	<div class="toast-container" id="toastContainer">
+		<!-- Success Toast -->
+		<div class="toast toast-success" id="successToast" role="alert" aria-live="assertive" aria-atomic="true">
+		  <div class="toast-header">
+			<strong class="mr-auto">Success</strong>
+			<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+			</button>
+		  </div>
+		  <div class="toast-body">
+			Login Successful
+		  </div>
+		</div>
+	
+		<!-- Error Toast -->
+		<div class="toast toast-error" id="errorToast" role="alert" aria-live="assertive" aria-atomic="true">
+		  <div class="toast-header">
+			<strong class="mr-auto">Error</strong>
+			<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+			</button>
+		  </div>
+		  <div class="toast-body">
+			Invalid Credentials
+		  </div>
+		</div>
+	  </div>
+	
+
+	
 
 	<header class="site-header">
 		<div class="container">
@@ -447,19 +523,14 @@
                         <li class="nav-item">
                             <a class="nav-link" href="submission.html">Submission</a>
                         </li>
-    
-                        
-    
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown d-none" id="adminNav">
                                 <a class="nav-link click-scroll dropdown-toggle" href="#section_5" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admin panel</a>
-    
                                 <ul class="dropdown-menu dropdown-menu-light p-0" aria-labelledby="navbarLightDropdownMenuLink">
                                     <li><a class="dropdown-item" href="./adminprofile.html">Profile</a></li>  
                                     <li><a class="dropdown-item" href="./adminDashboard.html">Admin Dashboard</a></li>
                                     <li><a class="dropdown-item" href="./transaction_details.html">Transaction Details</a></li>
                                 </ul>
                             </li>
-    
                         <li class="nav-item">
                             <a class="nav-link " href="contact.html">Contact Us</a>
                         </li>
@@ -471,7 +542,6 @@
                 </div>
             </div>
         </nav>
-
 	<main>
 
 		<section class="ftco-section home">
@@ -495,27 +565,25 @@
 										</div>
 									</div>
 									<div class="form-group mt-0">
-										<input type="email" class="form-control" required>
+										<input type="email" class="form-control" id="email" required>
 										<label class="form-control-placeholder" for="email">Email</label>
-										<span id="" class="fa fa-envelope fa-fw field-icon"></span>
-
-									</div>
-									<div class="form-group">
-										<input id="password-field" type="password" class="form-control" required>
+										<span id="emailError" class="error"></span>
+										<span id="emailIcon" class="fa fa-envelope fa-fw field-icon"></span>
+									  </div>
+									  <div class="form-group">
+										<input id="password" type="password" class="form-control" required>
 										<label class="form-control-placeholder" for="password">Password</label>
-										<span id="toggle-password" class="fa fa-fw fa-eye field-icon toggle-password"
-											onclick="togglePassword()"></span>
-									</div>
+										<span id="passwordError" class="error"></span>
+										<span id="toggle-password" class="fa fa-fw fa-eye field-icon toggle-password" onclick="togglePassword()"></span>
+									  </div>								
 									<div class="form-group">
-										<button type="submit"
-											class="form-control btn btn-primary rounded submit px-3 ">Sign
-											In</button>
+										<button type="submit" class="form-control btn btn-primary rounded submit px-3" >Sign In</button>
 									</div>
 									<div class="form-group d-flex justify-content-between">
 										<div class="w-50 text-left">
-											<label class="checkbox-wrap checkbox-primary mb-0">Remember Me
+											<label class="checkbox-wrap checkbox-primary mb-0">
 												<input type="checkbox" checked>
-												<span class="checkmark"></span>
+												<span class="checkmark"></span> Remember Me
 											</label>
 										</div>
 										<div class=" text-right">
@@ -523,6 +591,7 @@
 										</div>
 									</div>
 								</form>
+								
 								<!-- Add the Forgot Password form (initially hidden) -->
 								<form id="forgotPasswordForm" style="display: none">
 									<span class="gi-login-wrap">
@@ -548,9 +617,6 @@
 
 		</section>
 		<!-- login end -->
-
-
-
 	</main>
 
 	<footer class="site-footer">
@@ -656,6 +722,9 @@
 	<script src="js/click-scroll.js"></script>
 	<script src="js/counter.js"></script>
 	<script src="js/custom.js"></script>
+
+	<script type="module" src="login.js"></script>
+
 	<script>
 		function togglePassword() {
         var passwordField = document.getElementById('password-field');
