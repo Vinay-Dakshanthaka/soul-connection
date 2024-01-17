@@ -156,9 +156,15 @@
                 display: none;
             }
             #left-column{
-                margin-left: -15%;
+                margin-left: 0%;
                 text-align: justify;
                 padding: 0;
+            }
+            .wwr p{
+                margin-right: 0.8rem;
+            }
+            .wwr .ms-5{
+                margin-left:0px !important;
             }
             .about-main{
                 padding: 0;
@@ -200,15 +206,10 @@
             #right-column{
                 display: none;
             }
-            .top-a-2{
-                margin-top: -3vh;
-            }
-            .top-a{
-                padding:0 0.9vw;
-            }
+        }
+        @media (max-width:992px){
             .top-a p{
-                padding-top: 0px;
-                padding-bottom: 0px;
+                padding:0px;
             }
         }
 
@@ -325,7 +326,7 @@
                     <div class="row d-flex ">
                         <div class="col-lg-6 col-sm-12 d-flex align-items-center flex-wrap justify-content-start">
                             <p class="d-flex mb-0">
-                                <i class="bi bi-globe me-1"></i>
+                                <i class="bi bi-globe me-2"></i>
                                 <a class="top-a" href="https://www.soulconnectionne.in" target="_blank">
                                     <span class="fs-sm">www.soulconnectionne.in</span>
                                 </a>
@@ -333,7 +334,7 @@
                         </div>
                         <div class="col-lg-6 col-sm-12 d-flex flex-wrap justify-content-end  align-items-center  top-a-2">
                             <p class="d-flex mb-0">
-                                <i class="bi bi-envelope me-1"></i>
+                                <i class="bi bi-envelope me-2"></i>
                                 <a class="top-a" href="mailto:editor@soulconnectionne.in">
                                     <span class="fs-sm">editor@soulconnectionne.in</span>
                                 </a>
@@ -442,7 +443,7 @@
                 <h1 class="text-center text-black">About Us</h1>
             </div>
 
-            <div class="container ">
+            <div class="container wwr">
                 <div class="row mt-4 gap-5 ms-5">
                     <div class="col-md-7 " id="left-column">
                         <h2 id="who-we-are-heading">Who we are</h2>
