@@ -14,6 +14,8 @@
     <link href="css/bootstrap-icons.css" rel="stylesheet">
 
     <link href="css/template.css" rel="stylesheet">
+
+    <script type="module" src="./universalFunctions.js"></script>
     <style>
         body {
             margin: 0;
@@ -197,6 +199,61 @@
             background-color: #f8f8f8;
         }
     </style>
+    <style>
+		.current-btn {
+			background: var(--secondary-color);
+			border-radius: var(--border-radius-large);
+			color: var(--white-color);
+			font-size: 13px;
+			line-height: normal;
+			padding: 10px 20px;
+		}
+
+		.current-btn:hover {
+			background-color: rgb(0, 234, 255);
+			color: var(--secondary-color);
+		}
+
+		.custom-block-flex {
+			background: var(--white-color);
+			border-radius: 5px;
+			position: relative;
+			overflow: hidden;
+			transition: all 0.5s;
+			box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
+		}
+
+		.issue_img {
+			max-height: 100%;
+			min-height: 250px;
+			display: flex;
+			align-items: center;
+			border: none;
+		}
+
+		.issue_img img {
+			min-height: 250px;
+			max-height: 300px;
+			object-fit: fill;
+			border: none;
+		}
+
+		.custom-block-body {
+			max-height: 300px;
+			min-height: 250px;
+			display: flex;
+			align-items: flex-start;
+			flex-direction: column;
+		}
+
+		.card {
+			border: none;
+		}
+
+		.card-body {
+			padding: 1rem;
+		}
+	</style>
 </head>
 
 <body>
@@ -302,12 +359,12 @@
                                     <li><a class="dropdown-item" href="./transaction_details.html">Transaction Details</a></li>
                                 </ul>
                             </li>
-    
-                       
-    
-                        <li class="nav-item ms-3">
-                            <a class="nav-link custom-btn custom-border-btn btn" href="login.html">Login</a>
-                        </li>
+                            <li class="nav-item ms-3" id="loginBtn">
+                                <a class="nav-link custom-btn custom-border-btn btn" href="login.html">Login</a>
+                            </li>
+                            <li class="nav-item ms-3" id="logoutBtn">
+                                <a class="nav-link custom-btn custom-border-btn btn" href="login.html">Logout</a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -324,7 +381,7 @@
     <div class="c">
         <div class="drop drop1"></div>
         <div class="drop drop2"></div>
-        <div class="container d-flex align-items-center justify-content-start mt-5 list">
+        <!-- <div class="container d-flex align-items-center justify-content-start mt-5 list">
             <ul class="archive-links">
                 <li><span><a href="#">Vol. I, Issue I (July-September, 2020)</a></span></li>
                 <li><span><a href="#">Vol. I, Issue II (October-December, 2020)</a></span></li>
@@ -340,8 +397,116 @@
                 <li><span><a href="#">Vol. IV, Issue II (April-June, 2023)</a></span></li>
                 <li><span><a href="#">Vol. IV, Issue III (July-September, 2023)</a></span></li>
             </ul>
-          
-        </div>
+        </div> -->
+
+        <section class="mt-4" id="section_2">
+			<div class="container">
+				<div class="row" id="pdfCardsContainer">
+					<!-- <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-4 ">
+						<div class="custom-block-flex d-flex h-100 w-100">
+							<div class="issue_img w-50 my-auto">
+								<div class="card card-body">
+
+									<img src="./images/causes/61WBzm7nkTL._AC_UF1000,1000_QL80_.jpg"
+										class="custom-block-image " alt="">
+								</div>
+							</div>
+							<div class="custom-block w-50">
+								<div class="custom-block-body">
+									<div class="current-issue-text">
+										<h5 class="mb-3">Soul Whispers</h5>
+										<p>Issue 1</p>
+									</div>
+									<div class="current-btns d-flex">
+										<a href="./issue-item.html" class="current-btn btn">View more</a>
+									</div>
+								
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-4">
+						<div class="custom-block-flex d-flex h-100 w-100">
+							<div class="issue_img w-50 my-auto">
+								<div class="card card-body">
+									<img src="./images/causes/Nature Echoes.jpg" class="custom-block-image " alt="">
+								</div>
+							</div>
+							<div class="custom-block w-50">
+								<div class="custom-block-body">
+									<div class="current-issue-text">
+
+										<h5 class="mb-3">Nature Echoes</h5>
+										<p>Issue 2</p>
+									</div>
+									<div class="current-btns d-flex">
+
+										<a href="./issue-item.html" class="current-btn btn">View more</a>
+									</div>
+
+
+									
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-4">
+						<div class="custom-block-flex d-flex h-100 w-100 ">
+							<div class="issue_img w-50 my-auto">
+								<div class="card card-body ">
+									<img src="./images/causes/Moonlight Metaphors.jpg" class="custom-block-image"
+										alt="">
+								</div>
+							</div>
+							<div class="custom-block w-50">
+								<div class="custom-block-body">
+									<div class="current-issue-text">
+
+										<h5 class="mb-3">Moonlight Metaphors</h5>
+										<p>Issue 2</p>
+									</div>
+									<div class="current-btns d-flex">
+
+										<a href="./issue-item.html" class="current-btn btn">View more</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					
+					<div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-4">
+						<div class="custom-block-flex d-flex h-100 w-100">
+							<div class="issue_img w-50 my-auto">
+								<div class="card card-body">
+									<img src="images/causes/Urban Voices.jpg" class="custom-block-image " alt="">
+								</div>
+							</div>
+							<div class="custom-block w-50">
+								<div class="custom-block-body">
+									<div class="current-issue-text">
+
+										<h5 class="mb-3">Urban Voices</h5>
+										<p>Issue 4</p>
+
+									</div>
+									<div class="current-btns d-flex">
+
+
+										<a href="./issue-item.html" class="current-btn btn">View more</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div> -->
+
+				</div>
+			</div>
+		</section>
+
+
         <nav aria-label="Page navigation" class="d-flex justify-content-center mt-3">
             <ul class="pagination">
                 <li class="page-item">
@@ -460,6 +625,8 @@
     <script src="js/click-scroll.js"></script>
     <script src="js/counter.js"></script>
     <script src="js/custom.js"></script>
+
+    <script type="module" src="./archive.js"></script>
 </body>
 
 </html>

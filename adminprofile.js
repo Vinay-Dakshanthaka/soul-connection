@@ -17,6 +17,8 @@ import {
   updateDoc,
   deleteObject,
   updatePassword,
+  EmailAuthProvider,
+  reauthenticateWithCredential,
 } from "./initialize.js";
 
 const loginBtn = document.getElementById("loginBtn");
@@ -204,7 +206,103 @@ fileInput.addEventListener("change", () => {
   }
 });
 
-function showToast(header, body, styleClass) {
+document.getElementById("changePasswordBtn").addEventListener("click", () => {
+  document.querySelector("#changePasswordBtn").disabled = true;
+  document.querySelector("#changePasswordBtn").textContent =
+    "Updating Password...";
+  // Get the current user
+  const user = auth.currentUser;
+  if (user) {
+    const currentPassword = document.getElementById("currentPassword").value;
+    const newPassword = document.getElementById("newPassword").value;
+    const confirmNewPassword =
+      document.getElementById("confirmNewPassword").value;
+
+    // Verify that the current password and new password match
+    if (currentPassword === newPassword) {
+      showToast(
+        "Current password and new password should not be the same.",
+        "danger"
+      );
+      document.querySelector("#changePasswordBtn").disabled = false;
+      document.querySelector("#changePasswordBtn").textContent =
+        "Change Password";
+      return;
+    }
+
+    // Verify that the new password and confirm new password match
+    if (newPassword !== confirmNewPassword) {
+      showToast(
+        "New password and confirm new password do not match.",
+        "danger"
+      );
+      document.querySelector("#changePasswordBtn").disabled = false;
+      document.querySelector("#changePasswordBtn").textContent =
+        "Change Password";
+      return;
+    }
+
+    // Change the user's password
+    updatePasswordFn(user, currentPassword, newPassword);
+
+    // Close the change password modal
+    const changePasswordModal = new bootstrap.Modal(
+      document.getElementById("changePasswordModalLabel")
+    );
+    changePasswordModal.hide();
+  }
+});
+
+// Function to update the user's password
+function updatePasswordFn(user, currentPassword, newPassword) {
+  // Check new password validity, else return
+  if (!isValidPassword(document.querySelector("#newPassword").value)) return;
+
+  const credentials = EmailAuthProvider.credential(user.email, currentPassword);
+
+  // Reauthenticate the user with their current password
+  reauthenticateWithCredential(user, credentials)
+    .then(() => {
+      // Password reauthentication successful, now update the password
+      updatePassword(user, newPassword)
+        .then(() => {
+          showToast("Password updated successfully!", "success");
+          document.querySelector("#changePasswordBtn").disabled = false;
+          document.querySelector("#changePasswordBtn").textContent =
+            "Change Password";
+          // Close the change password modal
+          const changePasswordModal = new bootstrap.Modal(
+            document.getElementById("changePasswordModalLabel")
+          );
+          changePasswordModal.hide();
+        })
+        .catch((error) => {
+          console.error("Error updating password:", error);
+          showToast(
+            "Error updating password. Please try again.",
+            "danger"
+          );
+          document.querySelector("#changePasswordBtn").disabled = false;
+          document.querySelector("#changePasswordBtn").textContent =
+            "Change Password";
+        });
+    })
+    .catch((error) => {
+      console.error("Error reauthenticating user:", error);
+      showToast(
+        "Error reauthenticating user. Please check your current password.",
+        "danger"
+      );
+      document.querySelector("#changePasswordBtn").disabled = false;
+      document.querySelector("#changePasswordBtn").textContent =
+        "Change Password";
+    });
+}
+
+function showToast(body, styleClass) {
+
+  const toastContainer = document.querySelector(".toast-container");
+  toastContainer.style.zIndex = 10500; 
   // Remove existing style classes and add the new one
   dynamicToast.classList.remove("toast-success", "toast-error");
   dynamicToast.classList.add(styleClass);
@@ -216,67 +314,6 @@ function showToast(header, body, styleClass) {
   toastInstance.show();
 }
 
-function validateFields() {
-  const currentPassword = document.getElementById("currentPassword").value;
-  const newPassword = document.getElementById("newPassword").value;
-  const confirmPassword = document.getElementById("confirmPassword").value;
-
-  const currentPasswordError = document.getElementById("currentPasswordError");
-  const newPasswordError = document.getElementById("newPasswordError");
-  const confirmPasswordError = document.getElementById("confirmPasswordError");
-
-  currentPasswordError.textContent = "";
-  newPasswordError.textContent = "";
-  confirmPasswordError.textContent = "";
-
-  if (currentPassword.length < 6) {
-    currentPasswordError.textContent =
-      "Current password must be at least 6 characters";
-    return false;
-  }
-
-  if (newPassword.length < 6) {
-    newPasswordError.textContent = "New password must be at least 6 characters";
-    return false;
-  }
-
-  if (newPassword !== confirmPassword) {
-    confirmPasswordError.textContent = "Passwords do not match";
-    return false;
-  }
-
-  return true;
+function isValidPassword(password) {
+  return password.length >= 6;
 }
-const changePasswordBtn = document.getElementById("changePassword");
-
-changePasswordBtn.addEventListener("click", async function changePassword() {
-  if (!validateFields()) {
-    return;
-  }
-
-  const currentPassword = document.getElementById("currentPassword").value;
-  const newPassword = document.getElementById("newPassword").value;
-
-  try {
-    // Add Firebase authentication logic here (e.g., get current user)
-    const user = auth.currentUser;
-
-    // Reauthenticate user with current password
-    const credential = signInWithEmailAndPassword(
-      auth,
-      user.email,
-      currentPassword
-    );
-
-    // Update user's password
-    await updatePassword(user, newPassword);
-
-    // Display success message or navigate to another page
-    console.log("Password changed successfully");
-    showToast("Success", "Password changed successfully", "toast-success");
-  } catch (error) {
-    // Handle errors, e.g., invalid current password or Firebase errors
-    console.error("Error changing password:", error.message);
-    showToast("Error", "Failed to change password", "toast-error");
-  }
-});
