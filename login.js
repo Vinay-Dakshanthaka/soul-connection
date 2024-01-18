@@ -18,68 +18,51 @@ function isValidPassword(password) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  let loginFormBtn = document.getElementById("loginForm");
-  let userData = null;
+  const loginFormBtn = document.getElementById("loginForm");
+  const dynamicToast = document.getElementById("dynamicToast");
+  const toastBody = document.getElementById("toastBody");
+
   loginFormBtn.addEventListener("submit", async (e) => {
     e.preventDefault();
-  
+
     if (!validateForm()) {
       return;
     }
-  
+
     const emailInput = document.getElementById("email").value;
     const passwordInput = document.getElementById("password").value;
-  
+    const signInBtn = document.getElementById('signInBtn')
     try {
-      console.log("logging in");
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        emailInput,
-        passwordInput
-      );
-      console.log("login success ");
+      console.log("Logging in...");
+      signInBtn.innerText = "Signing in"
+      signInBtn.disabled = true
+      const userCredential = await signInWithEmailAndPassword(auth, emailInput, passwordInput);
+
       const user = userCredential.user;
       const uid = user.uid;
-  
+
       console.log(uid);
-  
+
       const userRef = collection(firestore, "users");
       const userDocRef = doc(userRef, uid);
-  
       const userSnapshot = await getDoc(userDocRef);
-  
-      if (userSnapshot.empty) {
-        await setDoc(userDocRef, {
-          email: emailInput,
-          uid: uid,
-          role: "ADMIN",
-        });
-      } else {
-        await setDoc(userDocRef, {
-          email: emailInput,
-          uid: uid,
-          role: "ADMIN",
-        });
-      }
-      console.log("logged in", userCredential.user);
-  
-      // Show success toast
-      const successToast = new bootstrap.Toast(document.getElementById('successToast'));
-      successToast.show();
-  
-      window.location.href = "./adminprofile.html";
-      document.getElementById("adminNav").style.display = "block";
+      console.log("Logged in", userCredential.user);
+      showToast("Success", "Login Successful", "toast-success");
+      setTimeout(() => {
+        window.location.href = "./adminprofile.html";
+        document.getElementById("adminNav").style.display = "block";
+      }, 2000);
     } catch (error) {
       const errorCode = error.code;
       const errorMessage = error.message;
       console.error(`Error: ${errorCode}`, errorMessage);
-  
-      // Show error toast
-      const errorToast = new bootstrap.Toast(document.getElementById('errorToast'));
-      errorToast.show();
+
+      showToast("Error", "Invalid Credentials", "toast-error");
+      signInBtn.innerText = "Sign in"
+      signInBtn.disabled = false
     }
   });
-  
+
   function validateForm() {
     const emailInput = document.getElementById("email").value;
     const passwordInput = document.getElementById("password").value;
@@ -102,4 +85,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     return true;
   }
+
+  function showToast(header, body, styleClass) {
+    // Remove existing style classes and add the new one
+    dynamicToast.classList.remove("toast-success", "toast-error");
+    dynamicToast.classList.add(styleClass);
+
+    // Update toast body content
+    toastBody.textContent = body;
+
+    const toastInstance = new bootstrap.Toast(dynamicToast);
+    toastInstance.show();
+  }
 });
+
+
+

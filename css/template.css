@@ -1739,3 +1739,66 @@ blockquote::before {
     /* margin-left: 5%!important; */
 }
 }
+
+/* toast  */
+.toast-container {
+  position: fixed;
+  top: 10%;
+  right: 0;
+  z-index: 1000;
+  animation: slide-in 0.5s ease-out forwards;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.toast {
+  max-width: 300px;
+  margin: 10px;
+  pointer-events: auto;
+  right: 0;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.toast-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  color: black;
+}
+.toast-body{
+  font-size: 1rem;
+}
+/* Reduce the close button size */
+.toast-header .close {
+  font-size: 2rem;
+  background-color: transparent;
+  color: black;
+  border: none;
+  margin-top: 20%;
+}
+
+.toast-success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.toast-error {
+  background-color: #f8d7da;
+  color: #721c24;
+}

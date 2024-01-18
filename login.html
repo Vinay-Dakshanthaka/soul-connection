@@ -296,107 +296,70 @@
 		}
 
 
-    .gi-login-wrap {
-      display: block;
-      margin-bottom: 10px;
-    }
-	.gi-login-btn,
-    .gi-login-fp {
-      display: inline-block;
-      vertical-align: top;
-    }
+		.gi-login-wrap {
+			display: block;
+			margin-bottom: 10px;
+		}
 
-    label {
-      font-weight: bold;
-      display: block;
-      margin-bottom: 5px;
-    }
+		.gi-login-btn,
+		.gi-login-fp {
+			display: inline-block;
+			vertical-align: top;
+		}
 
-    input {
-      width: 100%;
-      padding: 8px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      box-sizing: border-box;
-    }
+		label {
+			font-weight: bold;
+			display: block;
+			margin-bottom: 5px;
+		}
 
-    .gi-login-btn {
-      text-align: center;
-    }
+		input {
+			width: 100%;
+			padding: 8px;
+			border: 1px solid #ddd;
+			border-radius: 4px;
+			box-sizing: border-box;
+		}
 
-    .gi-btn-1 {
-      background-color: #5bc1ac;
-      color: #fff;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-	.gi-btn-1:hover {
-      background-color: #0a343c;
-      color: #5bc1ac;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 16px;
-    }
+		.gi-login-btn {
+			text-align: center;
+		}
 
-    
+		.gi-btn-1 {
+			background-color: #5bc1ac;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			font-size: 16px;
+		}
 
-    #backToLoginButton {
-      color: #5bc1ac;
-      text-decoration: none;
-	  
-    }
+		.gi-btn-1:hover {
+			background-color: #0a343c;
+			color: #5bc1ac;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			font-size: 16px;
+		}
 
-    .error{
-		color: red;
-		font-size: .8rem;
-		/* display: none; */
-	}
 
-	.toast-container {
-      position: absolute;
-      top: 0;
-      right: 0;
-      z-index: 1000;
-      pointer-events: none;
-      animation: slide-in 0.5s ease-out forwards;
-    }
 
-    @keyframes slide-in {
-      0% { transform: translateX(100%); opacity: 0; }
-      100% { transform: translateX(0); opacity: 1; }
-    }
+		#backToLoginButton {
+			color: #5bc1ac;
+			text-decoration: none;
 
-    .toast {
-      max-width: 300px;
-      margin: 10px;
-      pointer-events: auto;
-      right: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
+		}
 
-    .toast-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-    }
+		.error {
+			color: red;
+			font-size: .8rem;
+			/* display: none; */
+		}
 
-    .toast-success {
-      background-color: #d4edda;
-      color: #155724;
-    }
-
-    .toast-error {
-      background-color: #f8d7da;
-      color: #721c24;
-    }
+		
 	</style>
 
 
@@ -404,61 +367,44 @@
 
 <body id="section_1">
 
-	<div class="toast-container" id="toastContainer">
-		<!-- Success Toast -->
-		<div class="toast toast-success" id="successToast" role="alert" aria-live="assertive" aria-atomic="true">
-		  <div class="toast-header">
-			<strong class="mr-auto">Success</strong>
-			<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-			  <span aria-hidden="true">&times;</span>
-			</button>
-		  </div>
-		  <div class="toast-body">
-			Login Successful
-		  </div>
+	<div class="toast-container " id="toastContainer">
+		<!-- Dynamic Toast -->
+		<div class="toast" id="dynamicToast" role="alert" aria-live="assertive" aria-atomic="true">
+			<div class="toast-header">
+				<button type="button" class="ml-2 mb-1 close" data-bs-dismiss="toast" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="toast-body" id="toastBody">
+				
+			</div>
 		</div>
-	
-		<!-- Error Toast -->
-		<div class="toast toast-error" id="errorToast" role="alert" aria-live="assertive" aria-atomic="true">
-		  <div class="toast-header">
-			<strong class="mr-auto">Error</strong>
-			<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-			  <span aria-hidden="true">&times;</span>
-			</button>
-		  </div>
-		  <div class="toast-body">
-			Invalid Credentials
-		  </div>
-		</div>
-	  </div>
-	
-
-	
-
+	</div>
 	<header class="site-header">
 		<div class="container">
 			<div class="row">
 
 				<div class="col-lg-12">
-                    <div class="row d-flex ">
-                        <div class="col-lg-6 col-sm-12 d-flex align-items-center flex-wrap justify-content-start">
-                            <p class="d-flex mb-0">
-                                <i class="bi bi-globe me-2"></i>
-                                <a class="top-a" href="https://www.soulconnectionne.in" target="_blank">
-                                    <span class="fs-sm">www.soulconnectionne.in</span>
-                                </a>
-                            </p>
-                        </div>
-                        <div class="col-lg-6 col-sm-12 d-flex flex-wrap justify-content-end  align-items-center  top-a-2">
-                            <p class="d-flex mb-0">
-                                <i class="bi bi-envelope me-2"></i>
-                                <a class="top-a" href="mailto:editor@soulconnectionne.in">
-                                    <span class="fs-sm">editor@soulconnectionne.in</span>
-                                </a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+					<div class="row d-flex ">
+						<div class="col-lg-6 col-sm-12 d-flex align-items-center flex-wrap justify-content-start">
+							<p class="d-flex mb-0">
+								<i class="bi bi-globe me-2"></i>
+								<a class="top-a" href="https://www.soulconnectionne.in" target="_blank">
+									<span class="fs-sm">www.soulconnectionne.in</span>
+								</a>
+							</p>
+						</div>
+						<div
+							class="col-lg-6 col-sm-12 d-flex flex-wrap justify-content-end  align-items-center  top-a-2">
+							<p class="d-flex mb-0">
+								<i class="bi bi-envelope me-2"></i>
+								<a class="top-a" href="mailto:editor@soulconnectionne.in">
+									<span class="fs-sm">editor@soulconnectionne.in</span>
+								</a>
+							</p>
+						</div>
+					</div>
+				</div>
 
 				<!-- <div class="col-lg-3 col-12 ms-auto d-lg-block d-none">
 							<ul class="social-icon">
@@ -485,63 +431,66 @@
 						</div> -->
 
 			</div>
-		</header>
-	
-		<nav class="navbar navbar-expand-lg bg-light shadow-lg">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <!-- <img src="images/logo.png" class="logo img-fluid" alt="Kind Heart Charity"> -->
-                    <span>
-                        Soul Connection Magazine
-                        <small>Non-profit Organization</small>
-                    </span>
-                </a>
-    
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-    
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link " href="index.html">Home</a>
-                        </li>
-    
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html">About Us</a>
-                        </li>
-    
-                        <li class="nav-item">
-                            <a class="nav-link" href="current_issue.html">Current Issues</a>
-                        </li>
-    
-                        <li class="nav-item">
-                            <a class="nav-link" href="archive.html">Archive</a>
-                        </li>
-    
-                        <li class="nav-item">
-                            <a class="nav-link" href="submission.html">Submission</a>
-                        </li>
-                        <li class="nav-item dropdown d-none" id="adminNav">
-                                <a class="nav-link click-scroll dropdown-toggle" href="#section_5" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admin panel</a>
-                                <ul class="dropdown-menu dropdown-menu-light p-0" aria-labelledby="navbarLightDropdownMenuLink">
-                                    <li><a class="dropdown-item" href="./adminprofile.html">Profile</a></li>  
-                                    <li><a class="dropdown-item" href="./adminDashboard.html">Admin Dashboard</a></li>
-                                    <li><a class="dropdown-item" href="./transaction_details.html">Transaction Details</a></li>
-                                </ul>
-                            </li>
-                        <li class="nav-item">
-                            <a class="nav-link " href="contact.html">Contact Us</a>
-                        </li>
-    
-                        <li class="nav-item ms-3">
-                            <a class="nav-link custom-btn custom-border-btn btn active" href="login.html">Login</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+	</header>
+
+	<nav class="navbar navbar-expand-lg bg-light shadow-lg">
+		<div class="container">
+			<a class="navbar-brand" href="index.html">
+				<!-- <img src="images/logo.png" class="logo img-fluid" alt="Kind Heart Charity"> -->
+				<span>
+					Soul Connection Magazine
+					<small>Non-profit Organization</small>
+				</span>
+			</a>
+
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav ms-auto">
+					<li class="nav-item">
+						<a class="nav-link " href="index.html">Home</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="about.html">About Us</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="current_issue.html">Current Issues</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="archive.html">Archive</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="submission.html">Submission</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link " href="contact.html">Contact Us</a>
+					</li>
+					<li class="nav-item dropdown d-none" id="adminNav">
+						<a class="nav-link click-scroll dropdown-toggle" href="#section_5"
+							id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+							aria-expanded="false">Admin panel</a>
+						<ul class="dropdown-menu dropdown-menu-light p-0" aria-labelledby="navbarLightDropdownMenuLink">
+							<li><a class="dropdown-item" href="./adminprofile.html">Profile</a></li>
+							<li><a class="dropdown-item" href="./adminDashboard.html">Admin Dashboard</a></li>
+							<li><a class="dropdown-item" href="./transaction_details.html">Transaction Details</a></li>
+						</ul>
+					</li>
+					
+
+					<li class="nav-item ms-3">
+						<a class="nav-link custom-btn custom-border-btn btn active" href="login.html">Login</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 	<main>
 
 		<section class="ftco-section home">
@@ -556,7 +505,7 @@
 									<div class="w-100">
 										<!-- <h3 class="mb-4">Sign In</h3> -->
 									</div>
-									
+
 								</div>
 								<form action="#" id="loginForm">
 									<div class="row justify-content-center">
@@ -569,15 +518,17 @@
 										<label class="form-control-placeholder" for="email">Email</label>
 										<span id="emailError" class="error"></span>
 										<span id="emailIcon" class="fa fa-envelope fa-fw field-icon"></span>
-									  </div>
-									  <div class="form-group">
+									</div>
+									<div class="form-group">
 										<input id="password" type="password" class="form-control" required>
 										<label class="form-control-placeholder" for="password">Password</label>
 										<span id="passwordError" class="error"></span>
-										<span id="toggle-password" class="fa fa-fw fa-eye field-icon toggle-password" onclick="togglePassword()"></span>
-									  </div>								
+										<span id="toggle-password" class="fa fa-fw fa-eye field-icon toggle-password"
+											onclick="togglePassword()"></span>
+									</div>
 									<div class="form-group">
-										<button type="submit" class="form-control btn btn-primary rounded submit px-3" >Sign In</button>
+										<button type="submit"
+											class="form-control btn btn-primary rounded submit px-3" id="signInBtn">Sign In</button>
 									</div>
 									<div class="form-group d-flex justify-content-between">
 										<div class="w-50 text-left">
@@ -591,7 +542,7 @@
 										</div>
 									</div>
 								</form>
-								
+
 								<!-- Add the Forgot Password form (initially hidden) -->
 								<form id="forgotPasswordForm" style="display: none">
 									<span class="gi-login-wrap">
@@ -600,7 +551,8 @@
 											placeholder="Enter your email" required class="mb-1">
 									</span>
 
-									<span class="gi-login-wrap gi-login-fp d-flex justify-content-between align-items-center">
+									<span
+										class="gi-login-wrap gi-login-fp d-flex justify-content-between align-items-center">
 										<span class="gi-login-wrap gi-login-btn">
 											<button class="gi-btn-1 btn" type="submit"
 												id="forgotPasswordSubmit">Submit</button>
@@ -727,19 +679,19 @@
 
 	<script>
 		function togglePassword() {
-        var passwordField = document.getElementById('password-field');
-        var toggleIcon = document.getElementById('toggle-password');
+			var passwordField = document.getElementById('password-field');
+			var toggleIcon = document.getElementById('toggle-password');
 
-        if (passwordField.type === 'password') {
-            passwordField.type = 'text';
-            toggleIcon.classList.remove('fa-eye');
-            toggleIcon.classList.add('fa-eye-slash');
-        } else {
-            passwordField.type = 'password';
-            toggleIcon.classList.remove('fa-eye-slash');
-            toggleIcon.classList.add('fa-eye');
-        }
-    }
+			if (passwordField.type === 'password') {
+				passwordField.type = 'text';
+				toggleIcon.classList.remove('fa-eye');
+				toggleIcon.classList.add('fa-eye-slash');
+			} else {
+				passwordField.type = 'password';
+				toggleIcon.classList.remove('fa-eye-slash');
+				toggleIcon.classList.add('fa-eye');
+			}
+		}
 		function showLoginForm() {
 			const loginForm = document.getElementById("loginForm");
 			const forgotPasswordForm =
@@ -748,7 +700,7 @@
 			loginForm.style.display = "block";
 			forgotPasswordForm.style.display = "none";
 		}
-		
+
 		const backToLoginButton = document.getElementById("backToLoginButton");
 		backToLoginButton.addEventListener("click", (e) => {
 			e.preventDefault();
