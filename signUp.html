@@ -37,6 +37,26 @@
     .signup-btn {
       margin-top: 20px;
     }
+
+    /* Updated styles for toast notification */
+    #toast {
+            display: none;
+            position: fixed;
+            top: 10px;
+            right: 16px;
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 1;
+            width: 300px; /* Adjust the width as needed */
+        }
+
+        /* Styles for the close icon */
+        #closeToast {
+            float: right;
+            cursor: pointer;
+        }
     </style>
 
 </head>
@@ -202,6 +222,12 @@
               </div>              
         </main>
 
+          <!-- Toast Notification -->
+    <div id="toast">
+        Successfully signed up!
+        <span id="closeToast" onclick="closeToast()">&times;</span>
+    </div>
+
 
         <footer class="site-footer">
             <div class="container">
@@ -315,6 +341,30 @@
                     });
                 });
             </script> -->
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    function showToast() {
+                        var toast = document.getElementById("toast");
+                        toast.style.display = "block";
+                    }
+        
+                    function closeToast() {
+                        var toast = document.getElementById("toast");
+                        toast.style.display = "none";
+                    }
+        
+                    document.getElementById("signUpForm").addEventListener("submit", function (event) {
+                        event.preventDefault();
+                        showToast();
+                    });
+        
+                    document.getElementById("closeToast").addEventListener("click", function () {
+                        closeToast();
+                    });
+                });
+            </script>
+        
     
     </body>
     

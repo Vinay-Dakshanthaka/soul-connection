@@ -770,6 +770,34 @@
 			showForgotPasswordForm();
 		});
 	</script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+    const loginForm = document.getElementById("loginForm");
+    const successToast = document.getElementById("successToast");
+    const errorToast = document.getElementById("errorToast");
+
+    loginForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        // Add your login logic here
+        const loginSuccessful = true; // Replace this with your actual login logic
+
+        if (loginSuccessful) {
+            // Show success toast
+            showToast(successToast);
+        } else {
+            // Show error toast
+            showToast(errorToast);
+        }
+    });
+
+    function showToast(toast) {
+        const toastInstance = new bootstrap.Toast(toast);
+        toastInstance.show();
+    }
+});
+</script>
 
 </body>
 
