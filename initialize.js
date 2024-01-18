@@ -22,6 +22,7 @@ import {
   onAuthStateChanged,
   signOut,
   createUserWithEmailAndPassword,
+  updatePassword,
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
 const firebaseConfig = {
@@ -62,5 +63,6 @@ export {
   uploadBytesResumable,
   getDownloadURL,
   deleteObject,
-  updateDoc
+  updateDoc,
+  updatePassword
 };

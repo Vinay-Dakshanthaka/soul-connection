@@ -16,6 +16,7 @@ import {
   getDownloadURL,
   updateDoc,
   deleteObject,
+  updatePassword,
 } from "./initialize.js";
 
 const loginBtn = document.getElementById("loginBtn");
@@ -121,7 +122,11 @@ function updateProfile(uid) {
               });
             })
             .then(() => {
-              showToast("Success", "Profile Updated Successfully", "toast-success");
+              showToast(
+                "Success",
+                "Profile Updated Successfully",
+                "toast-success"
+              );
               console.log("Profile updated successfully");
               // Fetch and display the updated image
               fetchUserData(uid);
@@ -144,7 +149,11 @@ function updateProfile(uid) {
               });
             })
             .then(() => {
-              showToast("Success", "Profile Updated Successfully", "toast-success");
+              showToast(
+                "Success",
+                "Profile Updated Successfully",
+                "toast-success"
+              );
               console.log("Profile updated successfully");
               // Fetch and display the updated image
               fetchUserData(uid);
@@ -179,7 +188,6 @@ function updateProfile(uid) {
   }
 }
 
-
 // Event listener for file input change
 const fileInput = document.getElementById("fileInput");
 fileInput.addEventListener("change", () => {
@@ -208,3 +216,67 @@ function showToast(header, body, styleClass) {
   toastInstance.show();
 }
 
+function validateFields() {
+  const currentPassword = document.getElementById("currentPassword").value;
+  const newPassword = document.getElementById("newPassword").value;
+  const confirmPassword = document.getElementById("confirmPassword").value;
+
+  const currentPasswordError = document.getElementById("currentPasswordError");
+  const newPasswordError = document.getElementById("newPasswordError");
+  const confirmPasswordError = document.getElementById("confirmPasswordError");
+
+  currentPasswordError.textContent = "";
+  newPasswordError.textContent = "";
+  confirmPasswordError.textContent = "";
+
+  if (currentPassword.length < 6) {
+    currentPasswordError.textContent =
+      "Current password must be at least 6 characters";
+    return false;
+  }
+
+  if (newPassword.length < 6) {
+    newPasswordError.textContent = "New password must be at least 6 characters";
+    return false;
+  }
+
+  if (newPassword !== confirmPassword) {
+    confirmPasswordError.textContent = "Passwords do not match";
+    return false;
+  }
+
+  return true;
+}
+const changePasswordBtn = document.getElementById("changePassword");
+
+changePasswordBtn.addEventListener("click", async function changePassword() {
+  if (!validateFields()) {
+    return;
+  }
+
+  const currentPassword = document.getElementById("currentPassword").value;
+  const newPassword = document.getElementById("newPassword").value;
+
+  try {
+    // Add Firebase authentication logic here (e.g., get current user)
+    const user = auth.currentUser;
+
+    // Reauthenticate user with current password
+    const credential = signInWithEmailAndPassword(
+      auth,
+      user.email,
+      currentPassword
+    );
+
+    // Update user's password
+    await updatePassword(user, newPassword);
+
+    // Display success message or navigate to another page
+    console.log("Password changed successfully");
+    showToast("Success", "Password changed successfully", "toast-success");
+  } catch (error) {
+    // Handle errors, e.g., invalid current password or Firebase errors
+    console.error("Error changing password:", error.message);
+    showToast("Error", "Failed to change password", "toast-error");
+  }
+});

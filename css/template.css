@@ -1743,7 +1743,7 @@ blockquote::before {
 /* toast  */
 .toast-container {
   position: fixed;
-  top: 10%;
+  top: 15%;
   right: 0;
   z-index: 1000;
   animation: slide-in 0.5s ease-out forwards;
@@ -1796,9 +1796,11 @@ blockquote::before {
 .toast-success {
   background-color: #d4edda;
   color: #155724;
+  border-bottom: 5px solid #155724;
 }
 
 .toast-error {
   background-color: #f8d7da;
   color: #721c24;
+  border-bottom: 5px solid #721c24;
 }

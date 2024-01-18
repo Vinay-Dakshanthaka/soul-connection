@@ -297,50 +297,48 @@
                         <div class="form-group">
                             <label for="currentPassword">Current Password:</label>
                             <div class="input-group">
-                                <input type="password" class="form-control" id="currentPassword"
-                                    placeholder="Enter current password">
+                                <input type="password" class="form-control" id="currentPassword" placeholder="Enter current password">
                                 <div class="input-group-append">
-                                    <span class="input-group-text toggle-password"
-                                        onclick="togglePassword('currentPassword')">
+                                    <span class="input-group-text toggle-password" onclick="togglePassword('currentPassword')">
                                         <i class="bi bi-eye"></i>
                                     </span>
                                 </div>
                             </div>
+                            <small id="currentPasswordError" class="text-danger"></small>
                         </div>
-
+                
                         <div class="form-group">
                             <label for="newPassword">New Password:</label>
                             <div class="input-group">
-                                <input type="password" class="form-control" id="newPassword"
-                                    placeholder="Enter new password">
+                                <input type="password" class="form-control" id="newPassword" placeholder="Enter new password">
                                 <div class="input-group-append">
-                                    <span class="input-group-text toggle-password"
-                                        onclick="togglePassword('newPassword')">
+                                    <span class="input-group-text toggle-password" onclick="togglePassword('newPassword')">
                                         <i class="bi bi-eye"></i>
                                     </span>
                                 </div>
                             </div>
+                            <small id="newPasswordError" class="text-danger"></small>
                         </div>
-
+                
                         <div class="form-group">
                             <label for="confirmPassword">Confirm Password:</label>
                             <div class="input-group">
-                                <input type="password" class="form-control" id="confirmPassword"
-                                    placeholder="Confirm new password">
+                                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm new password">
                                 <div class="input-group-append">
-                                    <span class="input-group-text toggle-password"
-                                        onclick="togglePassword('confirmPassword')">
+                                    <span class="input-group-text toggle-password" onclick="togglePassword('confirmPassword')">
                                         <i class="bi bi-eye"></i>
                                     </span>
                                 </div>
                             </div>
+                            <small id="confirmPasswordError" class="text-danger"></small>
                         </div>
                     </form>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Change Password</button>
+                        <button type="button" class="btn btn-primary" id="changePassword">Change Password</button>
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>
