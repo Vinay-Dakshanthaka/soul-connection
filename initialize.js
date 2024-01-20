@@ -9,6 +9,9 @@ import {
   onSnapshot,
   updateDoc,
   addDoc,
+  query,
+  limit,
+  where,
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 import {
   getStorage,
@@ -74,5 +77,8 @@ export {
   reauthenticateWithCredential,
   getDocs,
   uploadString,
-  addDoc
+  addDoc,
+  query,
+  limit,
+  where,
 };

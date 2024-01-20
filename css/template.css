@@ -1815,66 +1815,56 @@ blockquote::before {
   border-bottom: 5px solid #721c24;
 }
 
-/* HTML: <div class="loader"></div> */
-.loader {
-  width: 60px;
-  aspect-ratio: 1;
+
+#loader-container {
+  position: fixed; /* or 'absolute' depending on your preference */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.7); /* semi-transparent white background */
+  z-index: 1000; /* higher z-index to make it display over other elements */
+}
+
+.loader {
+  width: 15px;
+  aspect-ratio: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .loader::before,
 .loader::after {
   content: "";
-  flex: 1;
-  animation: l14 1.5s -.25s infinite linear alternate both;
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #000;
+}
+
+.loader::before {
+  box-shadow: -25px 0;
+  animation: l8-1 1s infinite linear;
 }
 
 .loader::after {
-  --s: -1, -1;
-  animation-delay: .5s;
+  transform: rotate(0deg) translateX(25px);
+  animation: l8-2 1s infinite linear;
 }
 
-@keyframes l14 {
-
-  0%,
-  30% {
-    transform: scale(var(--s, 1)) translate(0px) perspective(150px) rotateY(0deg);
-    clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%, 0 75%, 0 25%);
-    background: #FA6900;
-  }
-
-  37.5% {
-    transform: scale(var(--s, 1)) translate(-10px) perspective(150px) rotateX(0deg);
-    clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%, 0 75%, 0 25%);
-    background: #FA6900;
-  }
-
-  50% {
-    transform: scale(var(--s, 1)) translate(-10px) perspective(150px) rotateX(-90deg);
-    clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%, 0 75%, 0 25%);
-    background: #FA6900;
-    border-radius: 0
-  }
-
-  50.01% {
-    transform: scale(var(--s, 1)) translate(-10px) perspective(150px) rotateX(-90.1deg);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 25%);
-    background: #2FB8AC;
-    border-radius: 100px 0 0 100px
-  }
-
-  62.5% {
-    transform: scale(var(--s, 1)) translate(-10px) perspective(150px) rotateX(-180deg);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 25%);
-    background: #2FB8AC;
-    border-radius: 100px 0 0 100px
-  }
-
-  70%,
+@keyframes l8-1 {
   100% {
-    transform: scale(var(--s, 1)) translate(0px) perspective(150px) rotateX(-180deg);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 25%);
-    background: #2FB8AC;
-    border-radius: 100px 0 0 100px;
+    transform: translateX(25px);
+  }
+}
+
+@keyframes l8-2 {
+  100% {
+    transform: rotate(-180deg) translateX(25px);
   }
 }

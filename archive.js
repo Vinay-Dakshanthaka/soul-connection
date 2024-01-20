@@ -23,15 +23,24 @@ import {
     collection
   } from "./initialize.js";
 
-
+  function displayLoader() {
+    const loaderContainer = document.getElementById('loader-container');
+    loaderContainer.style.display = 'block'; // Show the loader
+  }
+  function hideLoader() {
+    const loaderContainer = document.getElementById('loader-container');
+    loaderContainer.style.display = 'none'; // Show the loader
+  }
   const pdfCardsContainer = document.getElementById("pdfCardsContainer");
 
   const pdfContentsCollection = collection(firestore, 'pdfContents');
 const querySnapshot = await getDocs(pdfContentsCollection);
 
 querySnapshot.forEach((doc) => {
+  
   const pdfData = doc.data();
   createPdfCard(pdfData);
+  hideLoader()
 });
 
 // Function to create a card and append it to the container

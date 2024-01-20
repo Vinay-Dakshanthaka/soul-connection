@@ -21,6 +21,15 @@ import {
   reauthenticateWithCredential,
 } from "./initialize.js";
 
+function displayLoader() {
+  const loaderContainer = document.getElementById('loader-container');
+  loaderContainer.style.display = 'block'; // Show the loader
+}
+function hideLoader() {
+  const loaderContainer = document.getElementById('loader-container');
+  loaderContainer.style.display = 'none'; // Show the loader
+}
+
 const loginBtn = document.getElementById("loginBtn");
 const logoutBtn = document.getElementById("logoutBtn");
 const adminNav = document.getElementById("adminNav");
@@ -42,9 +51,11 @@ onAuthStateChanged(auth, (user) => {
     fetchUserData(user.uid);
 
     // Event listener for saveChangesBtn
-    saveChangesBtn.addEventListener("click", () => {
-      updateProfile(user.uid);
-    });
+    saveChangesBtn.addEventListener('click', () => {
+      if (validateForm()) {
+          updateProfile(user.uid);
+      }
+  });
   } else {
     document.getElementById("loginBtn").style.display = "block";
     document.getElementById("logoutBtn").style.display = "none";
@@ -55,23 +66,26 @@ onAuthStateChanged(auth, (user) => {
 logoutBtn.addEventListener("click", () => {
   signOut(auth)
     .then(() => {
-      showToast("Success", "Logout Successful", "toast-success");
+      showToast("", "Logout Successful", "toast-success");
       setTimeout(() => {
         window.location.href = "./login.html";
       }, 2000);
     })
     .catch((error) => {
-      showToast("Error", "Error while Sign out", "toast-error");
+      showToast("", "Error while Sign out", "toast-error");
       console.error("Error in sign out", error);
     });
 });
 
 // Function to fetch user data
 function fetchUserData(uid) {
+  displayLoader()
   onSnapshot(doc(firestore, "users", uid), (doc) => {
     userData = doc.data();
     displayUserData();
+    hideLoader()
   });
+ 
 }
 
 // Function to display user data
@@ -90,6 +104,9 @@ function displayUserData() {
 // Function to update user profile
 // Function to update user profile
 function updateProfile(uid) {
+
+  saveChangesBtn.disabled=true
+  saveChangesBtn.innerText = 'Updating...'
   let phoneInput = document.getElementById("phone").value;
   let nameInput = document.getElementById("name").value;
   let emailInput = document.getElementById("email").value;
@@ -125,7 +142,7 @@ function updateProfile(uid) {
             })
             .then(() => {
               showToast(
-                "Success",
+                "",
                 "Profile Updated Successfully",
                 "toast-success"
               );
@@ -134,7 +151,7 @@ function updateProfile(uid) {
               fetchUserData(uid);
             })
             .catch((error) => {
-              showToast("Error", "Something went wrong", "toast-error");
+              showToast("", "Something went wrong", "toast-error");
               console.error("Error updating profile:", error);
             });
         } else {
@@ -151,23 +168,28 @@ function updateProfile(uid) {
               });
             })
             .then(() => {
+             
               showToast(
-                "Success",
+                "",
                 "Profile Updated Successfully",
                 "toast-success"
               );
-              console.log("Profile updated successfully");
+              saveChangesBtn.disabled=false
+              saveChangesBtn.innerText = 'Save Changes'
+              console.log("Profile saved successfully");
               // Fetch and display the updated image
               fetchUserData(uid);
             })
             .catch((error) => {
-              showToast("Error", "Something went wrong", "toast-error");
+              saveChangesBtn.disabled=false
+              saveChangesBtn.innerText = 'Save Changes'
+              showToast("", "Something went wrong", "toast-error");
               console.error("Error updating profile:", error);
             });
         }
       })
       .catch((error) => {
-        showToast("Error", "Error uploading image", "toast-error");
+        showToast("", "Error uploading image", "toast-error");
         console.error("Error uploading image:", error);
       });
   } else {
@@ -178,14 +200,18 @@ function updateProfile(uid) {
       email: emailInput,
     })
       .then(() => {
-        showToast("Success", "Profile Updated Successfully", "toast-success");
+        showToast("", "Profile Updated Successfully", "toast-success");
         console.log("Profile updated successfully");
+        saveChangesBtn.disabled=false
+        saveChangesBtn.innerText = 'Save Changes'
         // Fetch and display the updated image
         fetchUserData(uid);
       })
       .catch((error) => {
-        showToast("Error", "Something went wrong", "toast-error");
+        showToast("", "Something went wrong", "toast-error");
         console.error("Error updating profile:", error);
+        saveChangesBtn.disabled=false
+        saveChangesBtn.innerText = 'Save Changes'
       });
   }
 }
@@ -220,7 +246,7 @@ document.getElementById("changePasswordBtn").addEventListener("click", () => {
 
     // Verify that the current password and new password match
     if (currentPassword === newPassword) {
-      showToast(
+      showToast("",
         "Current password and new password should not be the same.",
         "danger"
       );
@@ -232,7 +258,7 @@ document.getElementById("changePasswordBtn").addEventListener("click", () => {
 
     // Verify that the new password and confirm new password match
     if (newPassword !== confirmNewPassword) {
-      showToast(
+      showToast("",
         "New password and confirm new password do not match.",
         "danger"
       );
@@ -266,7 +292,7 @@ function updatePasswordFn(user, currentPassword, newPassword) {
       // Password reauthentication successful, now update the password
       updatePassword(user, newPassword)
         .then(() => {
-          showToast("Password updated successfully!", "success");
+          showToast("","Password updated successfully!", "");
           document.querySelector("#changePasswordBtn").disabled = false;
           document.querySelector("#changePasswordBtn").textContent =
             "Change Password";
@@ -278,7 +304,7 @@ function updatePasswordFn(user, currentPassword, newPassword) {
         })
         .catch((error) => {
           console.error("Error updating password:", error);
-          showToast(
+          showToast("",
             "Error updating password. Please try again.",
             "danger"
           );
@@ -289,7 +315,7 @@ function updatePasswordFn(user, currentPassword, newPassword) {
     })
     .catch((error) => {
       console.error("Error reauthenticating user:", error);
-      showToast(
+      showToast("",
         "Error reauthenticating user. Please check your current password.",
         "danger"
       );
@@ -299,21 +325,86 @@ function updatePasswordFn(user, currentPassword, newPassword) {
     });
 }
 
-function showToast(body, styleClass) {
-
+function showToast(header, body, styleClass) {
   const toastContainer = document.querySelector(".toast-container");
-  toastContainer.style.zIndex = 10500; 
-  // Remove existing style classes and add the new one
-  dynamicToast.classList.remove("toast-success", "toast-error");
-  dynamicToast.classList.add(styleClass);
+  toastContainer.style.zIndex = "10500"
 
-  // Update toast body content
-  toastBody.textContent = body;
+  if (toastContainer) {
+    // Create a new toast element
+    const dynamicToast = document.createElement("div");
+    dynamicToast.classList.add("toast", styleClass);
+    dynamicToast.setAttribute("role", "alert");
+    dynamicToast.setAttribute("aria-live", "assertive");
+    dynamicToast.setAttribute("aria-atomic", "true");
 
-  const toastInstance = new bootstrap.Toast(dynamicToast);
-  toastInstance.show();
+    // Create a toast header
+    const toastHeader = document.createElement("div");
+    toastHeader.classList.add("toast-header");
+
+    // Create a strong element for the header
+    const strong = document.createElement("strong");
+    strong.classList.add("me-auto");
+    strong.innerText = header;
+
+    // Create a button for closing the toast
+    const closeButton = document.createElement("button");
+    closeButton.classList.add("btn-close");
+    closeButton.setAttribute("type", "button");
+    closeButton.setAttribute("data-bs-dismiss", "toast");
+    closeButton.setAttribute("aria-label", "Close");
+
+    // Create a div for the toast body
+    const toastBody = document.createElement("div");
+    toastBody.classList.add("toast-body");
+    toastBody.innerText = body;
+
+    // Assemble the toast elements
+    toastHeader.appendChild(strong);
+    toastHeader.appendChild(closeButton);
+    dynamicToast.appendChild(toastHeader);
+    dynamicToast.appendChild(toastBody);
+
+    // Append the toast to the container
+    toastContainer.appendChild(dynamicToast);
+
+    // Initialize the Bootstrap toast and show it
+    const bsToast = new bootstrap.Toast(dynamicToast);
+    bsToast.show();
+
+    // Remove the toast after it's closed
+    dynamicToast.addEventListener("hidden.bs.toast", function () {
+      dynamicToast.remove();
+    });
+  } else {
+    console.error("Toast container not found in the DOM");
+  }
 }
 
-function isValidPassword(password) {
-  return password.length >= 6;
+
+function validateForm() {
+  // Get form elements
+  const nameInput = document.getElementById('name');
+  const phoneInput = document.getElementById('phone');
+  const nameError = document.getElementById('nameError');
+  const phoneError = document.getElementById('phoneError');
+
+  // Reset previous errors
+  nameError.textContent = '';
+  phoneError.textContent = '';
+
+  // Validate name
+  if (nameInput.value.length <= 3) {
+      nameError.textContent = 'Name must be more than 3 characters.';
+      return false;  // Validation failed
+  }
+
+  // Validate phone number
+  const phoneRegex = /^\d{10}$/;
+  if (!phoneRegex.test(phoneInput.value)) {
+      phoneError.textContent = 'Phone number must be exactly 10 digits.';
+      return false;  // Validation failed
+  }
+
+  // Validation successful
+  return true;
 }

@@ -1,6 +1,3 @@
-function hideLoader() {
-    document.querySelector(".loader").style.display = "none";
-}
 
 document.addEventListener("DOMContentLoaded", () => {
     const storedIssueData = localStorage.getItem("issueData");
@@ -39,10 +36,10 @@ document.addEventListener("DOMContentLoaded", () => {
         // Redirect to the issue_info.html page
         window.location.href = 'issue_info.html';
       }
-      hideLoader()
+     
     } else {
       console.error("No issueData found in localStorage.");
-      hideLoader()
+     
     }
   });
   
