@@ -11,6 +11,7 @@ import {
     onSnapshot,
   } from "./initialize.js";
   
+  
   const loginBtn = document.getElementById("loginBtn");
   const logoutBtn = document.getElementById("logoutBtn");
   const adminNav = document.getElementById("adminNav");

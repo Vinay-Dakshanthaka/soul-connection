@@ -91,6 +91,7 @@
             float: right;
             color: blue;
         }
+
         .btn-15 {
             border: none;
             z-index: 1;
@@ -131,7 +132,7 @@
             padding: 0 1rem;
         }
 
-       .ol li {
+        .ol li {
 
             position: relative;
             counter-increment: list;
@@ -155,27 +156,27 @@
             /* background: linear-gradient(to right, var(--c1) var(--stop), var(--c2) var(--stop)); */
         }
 
-       .ol h3 {
+        .ol h3 {
             display: flex;
             align-items: baseline;
             /* margin: 0 0 1rem; */
             color: rgb(70 70 70);
         }
 
-      
+
 
         @media (min-width: 40em) {
-          .ol  li {
+            .ol li {
                 margin: 1rem auto;
                 /* padding: 3rem 2rem 2rem; */
             }
 
-           .ol h3 {
+            .ol h3 {
                 font-size: 2.25rem;
                 /* margin: 0 0 2rem; */
             }
 
-           /* .ol h3::before {
+            /* .ol h3::before {
                 margin-right: 1.5rem;
             } */
         }
@@ -197,7 +198,8 @@
                                 </a>
                             </p>
                         </div>
-                        <div class="col-lg-6 col-sm-12 d-flex flex-wrap justify-content-end  align-items-center  top-a-2">
+                        <div
+                            class="col-lg-6 col-sm-12 d-flex flex-wrap justify-content-end  align-items-center  top-a-2">
                             <p class="d-flex mb-0">
                                 <i class="bi bi-envelope me-2"></i>
                                 <a class="top-a" href="mailto:editor@soulconnectionne.in">
@@ -260,7 +262,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Current Issues</a>
+                        <a class="nav-link" href="current_issue.html">Current Issues</a>
                     </li>
 
                     <li class="nav-item">
@@ -271,7 +273,7 @@
                         <a class="nav-link" href="submission.html">Submission</a>
                     </li>
 
-                    
+
                     <li class="nav-item">
                         <a class="nav-link " href="contact.html">Contact Us</a>
                     </li>
@@ -305,110 +307,85 @@
         </div>
     </div>
 
- <div class="container">
-    <h3 class="text-center mt-3">Vol. I, Issue I</h3>
-    <ol  class="ol">
-        <li>
+    <div class="container">
+        <h3 class="text-center mt-3" id="issueVersion">Vol. I, Issue I</h3>
+        <ol class="ol">
+
+            <!-- <li>
             <h3>To human beings from God of all thins</h3>
             <p class="lead text-black ms-2">Pratibha Varma</p>
             <button class="custom-btn-read-more btn-15 " onclick="window.location.href='issue_info.html'">Read More</button>
-        </li>
-        <li>
-            <h3>We never wrote that poem</h3>
-            <p class="lead text-black ms-2">Jayati Das</p>
-            <button class="custom-btn-read-more btn-15 " onclick="window.location.href='issue_info.html'">Read More</button>
-        </li>
-        <li>
-            <h3>The texture of the remorse</h3>
-            <p class="lead text-black ms-2">Tanushree Gogoi</p>
-            <button class="custom-btn-read-more btn-15 " onclick="window.location.href='issue_info.html'">Read More</button>
-        </li>
-        <li>
-            <h3>Pain to politics</h3>
-            <p class="lead text-black ms-2">Anangsha Alammyan</p>
-            <button class="custom-btn-read-more btn-15 " onclick="window.location.href='issue_info.html'">Read More</button>
-        </li>
-        <li >
-            <h3>This isn't the spring I wished</h3>
-            <p class="lead text-black ms-2">Sushmitha Baruah</p>
-            <button class="custom-btn-read-more btn-15" onclick="window.location.href='issue_info.html'">Read More</button>
-        </li>
-        <li >
-            <h3>A longer quarantine</h3>
-            <p class="lead text-black ms-2">Nafisa Akahtar</p>
-            <button class="custom-btn-read-more btn-15" onclick="window.location.href='issue_info.html'">Read More</button>
-        </li>
-        <li >
-            <h3>Exodus- A footnote</h3>
-            <p class="lead text-black ms-2">Kaushik Hazarika</p>
-            <button class="custom-btn-read-more btn-15" onclick="window.location.href='issue_info.html'">Read More</button>
-        </li>
-    </ol>   
- </div>
- <footer class="site-footer">
-    <div class="container">
-        <div class="row">
-            <!-- <div class="col-lg-3 col-12 mb-4">
+        </li> -->
+        </ol>
+    </div>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <!-- <div class="col-lg-3 col-12 mb-4">
                 <img src="images/logo.png" class="logo img-fluid" alt="">
             </div> -->
 
-            <div class="col-lg-6 col-md-6 col-12 mb-4">
-                <h5 class="site-footer-title mb-3" style="color:rgb(255, 255, 255)">Quick Links</h5>
+                <div class="col-lg-6 col-md-6 col-12 mb-4">
+                    <h5 class="site-footer-title mb-3" style="color:rgb(255, 255, 255)">Quick Links</h5>
 
-                <div class="d-flex flex-column justify-content-center">
-                    <a href="https://www.guwahatigrandpoetryfestival.com/">
+                    <div class="d-flex flex-column justify-content-center">
+                        <a href="https://www.guwahatigrandpoetryfestival.com/">
 
-                        <p class="mb-0" style="color:rgb(240, 240, 240)">Soul Connection Magazine is the property of Guwahati Grand Poetry Festival,
-                        </p>
-                        <p class="mb-0" style="color:rgb(0, 255, 247)"><strong>An Independent, Non-Profit Organization.</strong></p>
+                            <p class="mb-0" style="color:rgb(240, 240, 240)">Soul Connection Magazine is the property of
+                                Guwahati Grand Poetry Festival,
+                            </p>
+                            <p class="mb-0" style="color:rgb(0, 255, 247)"><strong>An Independent, Non-Profit
+                                    Organization.</strong></p>
 
-                    </a>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-12 mx-auto">
+                    <h5 class="site-footer-title mb-3" style="color:rgb(255, 255, 255)">Contact Infomation</h5>
+
+                    <p class="text-white d-flex mb-2">
+                        <i class="bi-telephone me-2"></i>
+                        <strong style="color:rgb(240, 240, 240)" class="me-2">Mobile: </strong>
+                        <a style="color:rgb(240, 240, 240)" href="tel:+917896454751" class="site-footer-link">+91
+                            7896454751</a>
+                    </p>
+
+                    <p class="text-white d-flex">
+                        <i class="bi-envelope me-2"></i>
+                        <strong class="me-2" style="color:rgb(240, 240, 240)">Email: </strong>
+                        <a style="color:rgb(240, 240, 240)" href="mailto:editor@soulconnectionne.in"
+                            class="site-footer-link">
+                            editor@soulconnectionne.in
+                        </a>
+                    </p>
+
+                    <p class=" d-flex mt-3" style="color:rgb(240, 240, 240)">
+                        <i class="bi-geo-alt me-2"></i>
+                        <strong class="me-2" style="color:rgb(240, 240, 240)">Address: </strong>
+                        House No. 09, Dr. Bhupen Hazarika Road, Kharghuli, Guwahati, Assam.
+                    </p>
+                    <p class=" d-flex mt-3" style="color:rgb(240, 240, 240)">
+                        <i class="bi bi-geo-fill"></i>
+                        <strong class="me-2 ms-2" style="color:rgb(240, 240, 240)">Pincode: </strong>
+                        781004
+                    </p>
+
+                    <!-- <a href="#" class="custom-btn btn mt-3">Get Direction</a> -->
                 </div>
             </div>
-
-            <div class="col-lg-6 col-md-6 col-12 mx-auto">
-                <h5 class="site-footer-title mb-3" style="color:rgb(255, 255, 255)" >Contact Infomation</h5>
-
-                <p class="text-white d-flex mb-2" >
-                    <i class="bi-telephone me-2"></i>
-                    <strong style="color:rgb(240, 240, 240)" class="me-2">Mobile: </strong>
-                    <a style="color:rgb(240, 240, 240)" href="tel:+917896454751" class="site-footer-link">+91 7896454751</a>
-                </p>
-
-                <p class="text-white d-flex">
-                    <i class="bi-envelope me-2"></i>
-                    <strong class="me-2" style="color:rgb(240, 240, 240)">Email: </strong>
-                    <a style="color:rgb(240, 240, 240)" href="mailto:editor@soulconnectionne.in" class="site-footer-link">
-                        editor@soulconnectionne.in
-                    </a>
-                </p>
-
-                <p class=" d-flex mt-3" style="color:rgb(240, 240, 240)">
-                    <i class="bi-geo-alt me-2"></i>
-                    <strong class="me-2" style="color:rgb(240, 240, 240)">Address: </strong>
-                    House No. 09, Dr. Bhupen Hazarika Road, Kharghuli, Guwahati, Assam.
-                </p>
-                <p class=" d-flex mt-3" style="color:rgb(240, 240, 240)">
-                    <i class="bi bi-geo-fill"></i>
-                    <strong class="me-2 ms-2" style="color:rgb(240, 240, 240)">Pincode: </strong>
-                    781004
-                </p>
-
-                <!-- <a href="#" class="custom-btn btn mt-3">Get Direction</a> -->
-            </div>
         </div>
-    </div>
 
-    <div class="site-footer-bottom">
-        <div class="container">
-            <div class="row">
+        <div class="site-footer-bottom">
+            <div class="container">
+                <div class="row">
 
-                <!-- <div class="col-lg-6 col-md-7 col-12">
+                    <!-- <div class="col-lg-6 col-md-7 col-12">
                     <p class="copyright-text mb-0">Copyright © 2036 <a href="#">Kind Heart</a> Charity Org.
                         Design: <a href="https://templatemo.com" target="_blank">TemplateMo</a></p>
                 </div> -->
 
-                <!-- <div class="col-lg-6 col-md-5 col-12 d-flex justify-content-center align-items-center mx-auto">
+                    <!-- <div class="col-lg-6 col-md-5 col-12 d-flex justify-content-center align-items-center mx-auto">
                     <ul class="social-icon">
                         <li class="social-icon-item">
                             <a href="#" class="social-icon-link bi-twitter"></a>
@@ -432,22 +409,21 @@
                     </ul>
                 </div> -->
 
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/click-scroll.js"></script>
+    <script src="js/counter.js"></script>
+    <script src="js/custom.js"></script>
 
+    <script src="./issueItem.js"></script>
 
-
-
-<!-- JAVASCRIPT FILES -->
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.sticky.js"></script>
-<script src="js/click-scroll.js"></script>
-<script src="js/counter.js"></script>
-<script src="js/custom.js"></script>
-<!-- <script>
+    <!-- <script>
          document.querySelectorAll('a[href^="#"]').forEach(anchor => {
              anchor.addEventListener('click', function (e) {
                  e.preventDefault();

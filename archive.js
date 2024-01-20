@@ -66,7 +66,7 @@ function createPdfCard(pdfData) {
   h5.classList.add("mb-3");
   h5.textContent = pdfData.content; 
   const p = document.createElement("p");
-  p.textContent = `Issue ${pdfData.issuePrice}`; 
+  p.textContent = `₹${pdfData.issuePrice}`; 
   currentIssueText.appendChild(h5);
   currentIssueText.appendChild(p);
 

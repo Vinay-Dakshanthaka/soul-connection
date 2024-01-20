@@ -384,7 +384,7 @@ margin-right: auto;
     </nav>
 
     <main>
-      
+
         <div class="container-1  ">
 
             <h1 id="heading">Admin Dashboard</h1>
@@ -413,8 +413,7 @@ margin-right: auto;
                                 <label for="pdfFile" class="form-label">Upload PDF File</label>
                                 <div class="d-flex align-items-center">
                                     <div class="me-2">
-                                        <input type="file" class="form-control" id="pdfFile" name="pdfFile"
-                                           >
+                                        <input type="file" class="form-control" id="pdfFile" name="pdfFile">
                                     </div>
                                     <!-- <small id="pdf-file-name" class="form-text text-muted"></small> -->
                                 </div>
@@ -430,7 +429,7 @@ margin-right: auto;
                                 <label for="issuePrice" class="form-label">Issue Price</label>
                                 <div class="input-group">
                                     <span class="input-group-text">₹</span>
-                                    <input type="text" class="form-control" id="issuePrice" name="issuePrice">
+                                    <input type="number" class="form-control" id="issuePrice" name="issuePrice">
                                 </div>
                             </div>
                             <!-- Submit Button -->
@@ -444,8 +443,8 @@ margin-right: auto;
 
                 <div class="card mb-5">
                     <div class="container rounded custom-container" id="container-1">
-                        <form onsubmit="(e)=>{e.preventDefault()}">
-                            <h2 class="mb-4 text-center fw-bold" style="color:white !important;">Content Issue
+                        <form id="currentIssueUploadForm">
+                            <h2 class="mb-4 text-center fw-bold" style="color:white !important;">Current Issue
                                 Subscription</h2>
 
                             <!-- Thumbnail Image Container -->
@@ -453,38 +452,31 @@ margin-right: auto;
                                 <label for="thumbnail" class="form-label">Thumbnail Image</label>
                                 <div class="d-flex align-items-center">
                                     <div class="me-2">
-                                        <input type="file" class="form-control" id="thumbnail" name="thumbnail"
-                                            onchange="displayThumbnail(this)">
+                                        <input type="file" class="form-control" id="currentIssuethumbnail"
+                                            name="thumbnail" onchange="displayCurrentIssueThumbnail(this)">
                                     </div>
-                                    <div id="thumbnail-container"
-                                        style="width: 100px; height: 100px; border: 1px solid #ccc;">
+                                    <div id="current-issue-thumbnail-container"
+                                        style="width: 180px; height: 180px; border: 1px solid #ccc;">
                                     </div>
                                 </div>
-                                <small id="thumbnail-file-name" class="form-text text-muted"></small>
                             </div>
-
-                            <!-- Issue Name -->
-                            <!-- <div class="mb-3">
-                                    <label for="issueName" class="form-label">Issue Name</label>
-                                    <input type="text" class="form-control" id="issueName" name="issueName">
-                                </div> -->
 
                             <!-- Issue Date/Version -->
                             <div class="mb-3">
-                                <label for="issueDate" class="form-label">Issue Date/Version</label>
-                                <input type="text" class="form-control" id="issueDate" name="issueDate">
+                                <label for="issueVersion" class="form-label">Issue Version</label>
+                                <input type="text" class="form-control" id="issueVersion" name="issueVersion">
                             </div>
 
                             <!-- Issue Price -->
                             <div class="mb-3">
-                                <label for="issuePrice" class="form-label">Issue Price</label>
+                                <label for="contentIssuePrice" class="form-label">Issue Price</label>
                                 <div class="input-group">
                                     <span class="input-group-text">₹</span>
-                                    <input type="text" class="form-control" id="issuePrice" name="issuePrice">
+                                    <input type="number" class="form-control" id="contentIssuePrice" name="contentIssuePrice">
                                 </div>
                             </div>
 
-                            <div class=" p-2 custom-container border mb-2 rounded-3">
+                            <div class=" p-2 custom-container border mb-2 rounded-3" id="poems">
                                 <div class="mb-3">
                                     <label for="issueTopic" class="form-label">Issue Topic</label>
                                     <div class="input-group">
@@ -493,8 +485,8 @@ margin-right: auto;
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="issueName" class="form-label">Issue Name</label>
-                                    <input type="text" class="form-control" id="issueName" name="issueName">
+                                    <label for="authorName" class="form-label">Author Name</label>
+                                    <input type="text" class="form-control" id="authorName" name="authorName">
                                 </div>
 
                                 <div class="mb-3">
@@ -510,7 +502,7 @@ margin-right: auto;
                                         <thead>
                                             <tr>
                                                 <th>Issue Topic</th>
-                                                <th>Issue Name</th>
+                                                <th>Author Name</th>
                                                 <th>Issue Content</th>
                                                 <th>Action</th>
                                             </tr>
@@ -524,7 +516,43 @@ margin-right: auto;
 
                             <!-- Submit Button -->
                             <div class="text-center mb-4">
-                                <button type="submit" class="btn-1 btn-primary">Submit</button>
+                                <button type="submit" class="btn-1 btn-primary" id="currentIssueSubmitBtn">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card mb-5">
+                    <div class="container rounded custom-container" id="container-3">
+                        <form id="bannerForm">
+                            <h2 class="mb-4 text-center fw-bold" style="color:white !important;">Banner Image</h2>
+                            <!-- Thumbnail Image Container -->
+                            <div class="mb-3">
+                                <label for="bannerThumbnail" class="form-label">Thumbnail Image</label>
+                                <div class="d-flex align-items-center">
+                                    <div class="me-2">
+                                        <input type="file" class="form-control" id="bannerThumbnail" name="bannerThumbnail"
+                                            onchange="displayBannerThumbnail(this)">
+                                    </div>
+                                    <div id="banner-thumbnail-container"
+                                        style="width: 150px; height: 150px; border: 1px solid #ccc;">
+                                    </div>
+                                </div>
+                                <small id="banner-thumbnail-file-name" class="form-text text-muted"></small>
+                            </div>
+                
+                            <div class=" p-2 custom-container ">
+                                <div class="mb-3">
+                                    <label for="issueTopicBanner" class="form-label">Credited to:</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="issueTopicBanner" name="issueTopicBanner">
+                                    </div>
+                                </div>
+                
+                                <!-- Submit Button -->
+                                <div class="text-center mb-4">
+                                    <button type="submit" class="btn-1 btn-primary" id="bannerImageSubmitForm">Submit</button>
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -646,41 +674,45 @@ margin-right: auto;
     <script type="module" src="./admindashboard.js"></script>
 
     <script>
-        $(document).ready(function () {
+        document.addEventListener("DOMContentLoaded", function () {
             // Add button functionality
-            $("#addButton").click(function () {
-                var issueTopic = $("#issueTopic").val();
-                var issueName = $("#issueName").val();
-                var issueContent = $("#issueTopicContent").val();
+            document.getElementById("addButton").addEventListener("click", function () {
+                var issueTopic = document.getElementById("issueTopic").value;
+                var authorName = document.getElementById("authorName").value;
+                var issueContent = document.getElementById("issueTopicContent").value;
 
-                if (issueTopic && issueName && issueContent) {
+                if (issueTopic && authorName && issueContent) {
                     // Create a new table row
-                    var newRow = $("<tr>");
-                    newRow.append("<td>" + issueTopic + "</td>");
-                    newRow.append("<td>" + issueName + "</td>");
-                    newRow.append("<td>" + issueContent + "</td>");
-                    newRow.append('<td><button class="btn btn-danger btn-sm deleteButton">Delete</button></td>');
+                    var newRow = document.createElement("tr");
+                    newRow.innerHTML = "<td>" + issueTopic + "</td>" +
+                        "<td>" + authorName + "</td>" +
+                        "<td>" + issueContent + "</td>" +
+                        '<td><button class="btn btn-danger btn-sm deleteButton">Delete</button></td>';
 
                     // Append the new row to the table body
-                    $("#dataTable tbody").append(newRow);
+                    document.getElementById("dataTable").getElementsByTagName('tbody')[0].appendChild(newRow);
 
                     // Show the table
-                    $("#dataTable").show();
+                    document.getElementById("dataTable").style.display = "table";
 
                     // Clear input fields
-                    $("#issueTopic, #issueName, #issueTopicContent").val("");
+                    document.getElementById("issueTopic").value = "";
+                    document.getElementById("authorName").value = "";
+                    document.getElementById("issueTopicContent").value = "";
                 } else {
                     alert("Please fill in all the fields.");
                 }
             });
 
             // Delete button functionality
-            $("#dataTable").on("click", ".deleteButton", function () {
-                $(this).closest("tr").remove();
+            document.getElementById("dataTable").addEventListener("click", function (event) {
+                if (event.target.classList.contains("deleteButton")) {
+                    event.target.closest("tr").remove();
 
-                // Hide the table if there are no rows
-                if ($("#dataTable tbody tr").length === 0) {
-                    $("#dataTable").hide();
+                    // Hide the table if there are no rows
+                    if (document.getElementById("dataTable").getElementsByTagName('tbody')[0].getElementsByTagName("tr").length === 0) {
+                        document.getElementById("dataTable").style.display = "none";
+                    }
                 }
             });
         });
@@ -703,6 +735,36 @@ margin-right: auto;
                 // Display the file name next to the thumbnail
                 const thumbnailFileName = document.getElementById("thumbnail-file-name");
                 thumbnailFileName.textContent = `Selected: ${input.files[0].name}`;
+            }
+        }
+
+        function displayCurrentIssueThumbnail(input) {
+            const thumbnailContainer = document.getElementById("current-issue-thumbnail-container");
+
+            // Ensure that a file is selected
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    thumbnailContainer.innerHTML = `<img src="${e.target.result}" style="width: 100%; height: 100%;" alt="Thumbnail">`;
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function displayBannerThumbnail(input) {
+            const thumbnailContainer = document.getElementById("banner-thumbnail-container");
+
+            // Ensure that a file is selected
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    thumbnailContainer.innerHTML = `<img src="${e.target.result}" style="width: 100%; height: 100%;" alt="Thumbnail">`;
+                };
+
+                reader.readAsDataURL(input.files[0]);
             }
         }
 

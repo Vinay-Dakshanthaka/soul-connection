@@ -8,6 +8,7 @@ import {
   setDoc,
   onSnapshot,
   updateDoc,
+  addDoc,
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 import {
   getStorage,
@@ -16,6 +17,7 @@ import {
   uploadBytesResumable,
   getDownloadURL,
   deleteObject,
+  uploadString
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
 import {
   getAuth,
@@ -70,5 +72,7 @@ export {
   updatePassword,
   EmailAuthProvider,
   reauthenticateWithCredential,
-  getDocs
+  getDocs,
+  uploadString,
+  addDoc
 };
